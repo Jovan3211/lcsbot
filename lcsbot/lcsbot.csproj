@@ -147,6 +147,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChampionGG\CallerHTTPClient.cs" />
+    <Compile Include="ChampionGG\Exception.cs" />
     <Compile Include="Classes\Champion.cs" />
     <Compile Include="Classes\Palette.cs" />
     <Compile Include="Classes\ILCSBOTClass.cs" />
