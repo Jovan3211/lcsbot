@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace tenebot.Services
+namespace lcsbot.Services
 {
     public static class ImageHandler
     {

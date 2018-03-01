@@ -6,7 +6,7 @@ using System.IO;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace tenebot.Services
+namespace lcsbot.Services
 {
 
     public class SettingsMiddleMan

@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Net;
 
-namespace tenebot.Services
+namespace lcsbot.Services
 {
     public static class Debugging
     {

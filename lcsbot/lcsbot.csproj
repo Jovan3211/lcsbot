@@ -144,6 +144,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Champion.cs" />
+    <Compile Include="Classes\Palette.cs" />
+    <Compile Include="Classes\ILCSBOTClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Debugging.cs" />
@@ -151,6 +154,8 @@
     <Compile Include="Services\MessageHandler.cs" />
     <Compile Include="Services\Settings.cs" />
     <Compile Include="Services\SqlHandler.cs" />
+    <Compile Include="Classes\Team.cs" />
+    <Compile Include="Classes\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

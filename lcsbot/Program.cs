@@ -5,8 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
-using tenebot;
-using tenebot.Services;
+using lcsbot.Services;
 
 namespace lcsbot
 {
@@ -50,12 +49,14 @@ namespace lcsbot
 
         private async Task HandleCommandAsync(SocketMessage arg)
         {
+            MessageHandler handler = new MessageHandler();
+
             var message = arg as SocketUserMessage;
             if (message == null || message.Author.IsBot) return;
 
             int argPos = 0;
 
-            if ((message.HasStringPrefix("!", ref argPos) || message.HasMentionPrefix(Settings._client.CurrentUser, ref argPos)) && !(message.Channel.ToString().Contains(message.Author.ToString())))
+            if ((message.HasStringPrefix("!", ref argPos) || message.HasMentionPrefix(Settings._client.CurrentUser, ref argPos)) && !CheckPrivate(message))
             {
                 var context = new SocketCommandContext(Settings._client, message);
                 Debugging.Log("Command Handler", $"{context.User.Username} called {message}");
@@ -64,18 +65,10 @@ namespace lcsbot
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception || result.ErrorReason != "The server responded with error 400: BadRequest")
                 {
                     Debugging.Log("Command Handler", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.WithTitle(":no_entry_sign:  Error!")
-                        .WithColor(Color.DarkRed)
-                        .WithDescription(result.ErrorReason);
-                    await arg.Channel.SendMessageAsync("", false, embed.Build());
-                }
-                else
-                {
-                    Debugging.Log("Command Handler", $"what", LogSeverity.Critical);
+                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", result.ErrorReason).Build());
                 }
             }
-            else if (message.Channel.ToString().Contains(message.Author.ToString())) //direct message
+            else if (CheckPrivate(message)) //direct message
             {
                 var context = new SocketCommandContext(Settings._client, message);
                 Debugging.Log("Command Handler, DM", $"{context.User.Username} sent {message}");
@@ -84,11 +77,7 @@ namespace lcsbot
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception)
                 {
                     Debugging.Log("Command Handler, DM", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
-                    EmbedBuilder embed = new EmbedBuilder();
-                    embed.WithTitle(":no_entry_sign:  DM Error!")
-                        .WithColor(Color.DarkRed)
-                        .WithDescription(result.ErrorReason);
-                    await arg.Channel.SendMessageAsync("", false, embed.Build());
+                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  DM Error!", result.ErrorReason).Build());
                 }
             }
         }
@@ -97,5 +86,7 @@ namespace lcsbot
         {
             var message = await before.GetOrDownloadAsync();
         }
+
+        private bool CheckPrivate(SocketUserMessage message) => message.Channel.ToString().Contains(message.Author.ToString());
     }
 }

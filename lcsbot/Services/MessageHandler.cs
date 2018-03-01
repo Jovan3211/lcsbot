@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Discord;
+﻿using Discord;
 using Discord.Commands;
-using Discord.WebSocket;
 
-namespace tenebot.Services
+namespace lcsbot.Services
 {
     public class MessageHandler : ModuleBase<SocketCommandContext>
     {
-        public EmbedBuilder BuildEmbed(string title, string description, Color color)
+        /// <summary>
+        /// Builds an embed to be used in sending messages to discord.
+        /// </summary>
+        /// <param name="title">Message title.</param>
+        /// <param name="description">Message description.</param>
+        /// <returns>Embed to be used in async calls</returns>
+        public EmbedBuilder BuildEmbed(string title, string description)
         {
-            color = Color.LightGrey;
+            Color color = Palette.Pink;
 
             EmbedBuilder message = new EmbedBuilder()
                 .WithTitle(title)
@@ -22,5 +22,23 @@ namespace tenebot.Services
 
             return message;
         }
+
+        /// <summary>
+        /// Builds an embed to be used in sending messages to discord.
+        /// </summary>
+        /// <param name="title">Message title.</param>
+        /// <param name="description">Message description.</param>
+        /// <param name="color">Message color.</param>
+        /// <returns>Embed to be used in async calls</returns>
+        public EmbedBuilder BuildEmbed(string title, string description, Color color)
+        {
+            EmbedBuilder message = new EmbedBuilder()
+                .WithTitle(title)
+                .WithDescription(description)
+                .WithColor(color);
+
+            return message;
+        }
+
     }
 }

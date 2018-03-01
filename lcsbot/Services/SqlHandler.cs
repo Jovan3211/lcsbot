@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System.Linq;
-using tenebot.Services;
 using System.Threading.Tasks;
 using Discord.WebSocket;
 
-namespace tenebot
+namespace lcsbot.Services
 {
     public static class SqlHandler
     {
