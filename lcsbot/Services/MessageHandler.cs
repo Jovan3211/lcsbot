@@ -63,7 +63,7 @@ namespace lcsbot.Services
         {
             EmbedBuilder message = new EmbedBuilder()
                 .WithTitle(title)
-                .WithDescription(description)
+                .WithDescription($"{description}\n────────────")
                 .WithColor(color);
 
             if (thumbnailUrl != "")

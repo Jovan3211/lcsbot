@@ -1,0 +1,28 @@
+15:49:15 Settings    Loaded configuration.json successfully
+15:49:15 SQL Server  Please enter login info
+15:49:22 SetConnecti New connection string set
+15:49:23 Database Te Connection to database is valid
+15:49:23 Discord     Discord.Net v1.0.2 (API v6)
+15:49:23 Gateway     Connecting
+15:49:24 Gateway     Connected
+15:49:24 Gateway     Ready
+15:49:27 Command Han Jovan called !help
+15:49:27 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+15:49:27 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+15:50:39 Command Han Jovan sent hello
+15:50:39 Command Han Error with command hello: Unknown command
+15:50:47 Command Han Jovan sent team view
+15:52:21 Command Han Jovan sent team help
+15:52:21 Command Han Error with command team help: The input text has too many parameters
+15:52:23 Command Han Jovan sent team
+15:52:26 Command Han Jovan sent help team
+15:52:26 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+15:52:27 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+15:53:08 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+15:53:08 CheckHttpRe 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+15:53:08 SQL Insert  Inserted records into database
+15:53:08 Add user to Added tenebi to users
+15:53:08 Command Han tenebi sent hi
+15:53:08 Command Han Error with command hi: Unknown command
+15:53:15 Command Han tenebi sent hey thats fucking sick
+15:53:15 Command Han Error with command hey thats fucking sick: Unknown command

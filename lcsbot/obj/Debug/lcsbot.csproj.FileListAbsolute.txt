@@ -48,3 +48,5 @@ D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.csproj.CoreCompileInputs.cache
 D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.exe
 D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.pdb
 D:\Gits\lcsbot\lcsbot\bin\Debug\configuration.json
+D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.xml

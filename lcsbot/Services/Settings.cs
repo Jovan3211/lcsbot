@@ -18,6 +18,8 @@ namespace lcsbot.Services
         public string BaseHostUrl { get; set; }
         public string SqlServerUrl { get; set; }
         public string DatabaseName { get; set; }
+        public string RiotAPIKey { get; set; }
+        public string ChampionGGAPIKey { get; set; }
     }
 
     public static class Settings
@@ -34,6 +36,8 @@ namespace lcsbot.Services
         private static string baseHostUrl;
         private static string databaseName;
         private static string sqlServerUrl;
+        private static string riotAPIKey;
+        private static string championGGAPIKey;
 
         private static string configPath = "configuration.json";
 
@@ -70,7 +74,14 @@ namespace lcsbot.Services
         /// Returns true or false depending on if the database is enabled in settings.
         /// </summary>
         public static bool EnableDatabase { get => enableDatabase; set => enableDatabase = value; }
-
+        /// <summary>
+        /// Returns the Riot API key.
+        /// </summary>
+        public static string RiotAPIKey { get => riotAPIKey; set => riotAPIKey = value; }
+        /// <summary>
+        /// Returns the Champion.gg API key.
+        /// </summary>
+        public static string ChampionGGAPIKey { get => championGGAPIKey; set => championGGAPIKey = value; }
         /// <summary>
         /// Loads the settings from a json file and stores it in the settings class variable.
         /// </summary>
@@ -90,6 +101,8 @@ namespace lcsbot.Services
                 baseHostUrl = middleMan.BaseHostUrl;
                 sqlServerUrl = middleMan.SqlServerUrl;
                 databaseName = middleMan.DatabaseName;
+                riotAPIKey = middleMan.RiotAPIKey;
+                championGGAPIKey = middleMan.ChampionGGAPIKey;
 
                 Debugging.Log("Settings", $"Loaded configuration.json successfully");
                 return true;

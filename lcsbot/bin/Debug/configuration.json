@@ -9,5 +9,7 @@
   "EnableDatabase": true,
   "BaseHostUrl": "http://139.59.162.138/lcsbot/",
   "SqlServerUrl": "139.59.162.138",
-  "DatabaseName": "lcsbotDatabase"
+  "DatabaseName": "lcsbotDatabase",
+  "RiotAPIKey": "",
+  "ChampionGGAPIKey": ""
 }
