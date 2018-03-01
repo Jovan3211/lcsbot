@@ -50,3 +50,6 @@ D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.pdb
 D:\Gits\lcsbot\lcsbot\bin\Debug\configuration.json
 D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.dll
 D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.xml
+D:\Gits\lcsbot\lcsbot\bin\Debug\RestSharp.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\System.ValueTuple.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\System.ValueTuple.xml
