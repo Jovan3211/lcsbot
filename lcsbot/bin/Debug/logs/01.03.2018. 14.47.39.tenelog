@@ -1,0 +1,21 @@
+14:47:40 Settings    Loaded configuration.json successfully
+14:47:40 SQL Server  Please enter login info
+14:47:48 SetConnecti New connection string set
+14:47:49 Database Te Connection to database is valid
+14:47:49 Discord     Discord.Net v1.0.2 (API v6)
+14:47:49 Gateway     Connecting
+14:47:50 Gateway     Connected
+14:47:51 Gateway     Ready
+14:47:57 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+14:47:57 CheckHttpRe Web exception: The remote server returned an error: (403) Forbidden.
+14:47:57 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.png' is reachable
+14:47:57 CheckHttpRe Remote server returned 404, not found
+14:47:57 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.gif' is reachable
+14:47:57 CheckHttpRe Remote server returned 404, not found
+14:47:57 GetImageUrl Failed to find image url
+14:49:06 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+14:49:06 CheckHttpRe 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+14:49:08 SQL Insert  Inserted records into database.
+14:49:08 Add user to Added Jovan to users
+14:49:08 Command Han Jovan sent hello
+14:49:08 Command Han Error with command hello: Unknown command

@@ -1,0 +1,9 @@
+14:01:41 Settings    Loaded configuration.json successfully
+14:01:41 SQL Server  Database disabled in configuration. Some features which use a mysql database won't be available
+14:01:41 Discord     Discord.Net v1.0.2 (API v6)
+14:01:41 Gateway     Connecting
+14:01:42 Gateway     Connected
+14:01:42 Gateway     Ready
+14:01:44 Command Han Jovan sent !help
+14:01:44 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+14:01:44 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable

@@ -72,7 +72,13 @@ namespace lcsbot.Services
             int counter = 0;
             foreach (string fieldTitle in fieldTitles)
             {
-                message.AddField(fieldTitle, fieldValue[counter]);
+                if (string.IsNullOrEmpty(fieldValue[counter]))
+                {
+                    Debugging.Log("BuildEmbed", "No fieldValue provided for fieldTitle, field text cannot be empty", LogSeverity.Warning);
+                    message.AddField(fieldTitle, "No value provided");
+                }
+                else
+                    message.AddField(fieldTitle, $"{fieldValue[counter]}\n───");
                 counter++;
             }
 

@@ -317,7 +317,7 @@ namespace lcsbot.Services
             try
             {
                 reader = cmd.ExecuteReader();
-                Debugging.Log("SQL Insert", $"Inserted records into database.");
+                Debugging.Log("SQL Insert", $"Inserted records into database");
             }
             catch (Exception e)
             {
@@ -387,6 +387,11 @@ namespace lcsbot.Services
         {
             Insert("User(UserId, Username)", $"('{user.Id}', '{user.Username}')");
             return Task.CompletedTask;
+        }
+
+        internal static List<string> Select()
+        {
+            throw new NotImplementedException();
         }
     }
 }

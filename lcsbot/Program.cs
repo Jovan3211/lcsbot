@@ -6,6 +6,7 @@ using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using lcsbot.Services;
+using lcsbot.Functions;
 
 namespace lcsbot
 {
@@ -65,12 +66,28 @@ namespace lcsbot
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception || result.ErrorReason != "The server responded with error 400: BadRequest")
                 {
                     Debugging.Log("Command Handler", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
-                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", result.ErrorReason).Build());
+                    
+                    if (result.ErrorReason == "Invalid context for command; accepted contexts: DM")
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", "That command is used in private messages.").Build());
+                    else
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", result.ErrorReason).Build());
                 }
             }
             else if (CheckPrivate(message)) //direct message
             {
                 var context = new SocketCommandContext(Settings._client, message);
+
+                if (!CheckUserInDatabase.Check(context.User.Id.ToString())) // checks if user is in database, if not, add
+                {
+                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hi there!", "First time meeting you, let me just add you to my database quickly.", ImageHandler.GetImageUrl("ahriwave")).Build());
+
+                    User newUser = new User(context.User.Id.ToString(), context.User.Username);
+                    if (newUser.AddToDatabase())
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Done!", "You're added, use `help` to see how to use me."));
+                    else
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Something went wrong", "When attempting to add to database."));
+                }
+
                 Debugging.Log("Command Handler, DM", $"{context.User.Username} sent {message}");
 
                 var result = await Settings._commands.ExecuteAsync(context, argPos, Settings._services);
