@@ -1,5 +1,6 @@
 ﻿using Discord;
 using Discord.Commands;
+using System.Collections.Generic;
 
 namespace lcsbot.Services
 {
@@ -10,8 +11,9 @@ namespace lcsbot.Services
         /// </summary>
         /// <param name="title">Message title.</param>
         /// <param name="description">Message description.</param>
+        /// <param name="thumbnailUrl">Optional thumbnail picture to be added to the message.</param>
         /// <returns>Embed to be used in async calls</returns>
-        public EmbedBuilder BuildEmbed(string title, string description)
+        public EmbedBuilder BuildEmbed(string title, string description, string thumbnailUrl = "")
         {
             Color color = Palette.Pink;
 
@@ -19,6 +21,9 @@ namespace lcsbot.Services
                 .WithTitle(title)
                 .WithDescription(description)
                 .WithColor(color);
+
+            if (thumbnailUrl != "")
+                message.WithThumbnailUrl(thumbnailUrl);
 
             return message;
         }
@@ -29,16 +34,49 @@ namespace lcsbot.Services
         /// <param name="title">Message title.</param>
         /// <param name="description">Message description.</param>
         /// <param name="color">Message color.</param>
+        /// <param name="thumbnailUrl">Optional thumbnail picture to be added to the message.</param>
         /// <returns>Embed to be used in async calls</returns>
-        public EmbedBuilder BuildEmbed(string title, string description, Color color)
+        public EmbedBuilder BuildEmbed(string title, string description, Color color, string thumbnailUrl = "")
         {
             EmbedBuilder message = new EmbedBuilder()
                 .WithTitle(title)
                 .WithDescription(description)
                 .WithColor(color);
 
+            if (thumbnailUrl != "")
+                message.WithThumbnailUrl(thumbnailUrl);
+
             return message;
         }
 
+        /// <summary>
+        /// Builds an embed to be used in sending messages to discord.
+        /// </summary>
+        /// <param name="title">Message title.</param>
+        /// <param name="description">Message description.</param>
+        /// <param name="color">Message color.</param>
+        /// <param name="fieldTitles">Additional field titles.</param>
+        /// <param name="fieldValue">Addidional field values.</param>
+        /// <param name="thumbnailUrl">Optional thumbnail picture to be added to the message.</param>
+        /// <returns>Embed to be used in async calls</returns>
+        public EmbedBuilder BuildEmbed(string title, string description, Color color, List<string> fieldTitles, List<string> fieldValue, string thumbnailUrl = "")
+        {
+            EmbedBuilder message = new EmbedBuilder()
+                .WithTitle(title)
+                .WithDescription(description)
+                .WithColor(color);
+
+            if (thumbnailUrl != "")
+                message.WithThumbnailUrl(thumbnailUrl);
+
+            int counter = 0;
+            foreach (string fieldTitle in fieldTitles)
+            {
+                message.AddField(fieldTitle, fieldValue[counter]);
+                counter++;
+            }
+
+            return message;
+        }
     }
 }

@@ -1,0 +1,22 @@
+12:27:51 Settings    Loaded configuration.json successfully
+12:27:51 SQL Server  Database disabled in configuration. Some features which use a mysql database won't be available
+12:27:51 Discord     Discord.Net v1.0.2 (API v6)
+12:27:52 Gateway     Connecting
+12:27:52 Gateway     Connected
+12:27:53 Gateway     Ready
+12:27:55 Command Han Jovan called !help
+12:27:55 Command     Discord.Commands.CommandException: Error occurred executing "help" for Jovan#2244 in space hunters/tenebot. ---> System.ArgumentException: Field name must not be null or empty.
+Parameter name: Name
+   at Discord.EmbedFieldBuilder.set_Name(String value)
+   at Discord.EmbedBuilder.AddField(String title, String text, Boolean inline)
+   at lcsbot.Commands.Help.<HelpCommand>d__0.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\Help.cs:line 22
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+12:27:55 Command Han Error with command !help: Field name must not be null or emptyParameter name: Name

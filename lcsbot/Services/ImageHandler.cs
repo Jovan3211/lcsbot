@@ -32,5 +32,28 @@ namespace lcsbot.Services
                 return "Failed to get url";
             }
         }
+
+        /// <summary>
+        /// Returns the url to the image from a name from the host server. Image file extension is automatically added.
+        /// </summary>
+        /// <param name="imageName">Name of the image to get.</param>
+        /// <param name="folder">Optional subfolder for the image location.</param>
+        /// <returns>The image url or 'Failed to get url' on fail.</returns>
+        public static string GetImageUrl(string imageName, string folder = "")
+        {
+            string url = imageBaseUrl + folder + imageName;
+
+            if (Debugging.CheckHttpReachable(url + ".jpg"))
+                return url + ".jpg";
+            else if (Debugging.CheckHttpReachable(url + ".png"))
+                return url + ".png";
+            else if (Debugging.CheckHttpReachable(url + ".gif"))
+                return url + ".gif";
+            else
+            {
+                Debugging.Log("GetImageUrl", "Failed to find image url");
+                return "Failed to get url";
+            }
+        }
     }
 }
