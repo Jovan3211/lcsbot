@@ -68,9 +68,9 @@ namespace lcsbot
                     Debugging.Log("Command Handler", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
                     
                     if (result.ErrorReason == "Invalid context for command; accepted contexts: DM")
-                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", "That command is used in private messages.").Build());
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Whoops! Something went wrong!", "Try messaging that command to me instead!").Build());
                     else
-                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Error!", result.ErrorReason).Build());
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Whoops! Something went wrong!", result.ErrorReason).Build());
                 }
             }
             else if (CheckPrivate(message)) //direct message
@@ -79,13 +79,13 @@ namespace lcsbot
 
                 if (!CheckUserInDatabase.Check(context.User.Id.ToString())) // checks if user is in database, if not, add
                 {
-                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hi there!", "First time meeting you, let me just add you to my database quickly.", ImageHandler.GetImageUrl("ahriwave")).Build());
+                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hi there!", "Looks like we've never met before. Nice to meet you! I'm going to quickly add you to my database...", ImageHandler.GetImageUrl("ahriwave")).Build());
 
                     User newUser = new User(context.User.Id.ToString(), context.User.Username);
                     if (newUser.AddToDatabase())
-                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Done!", "You're added, use `help` to see how to use me."));
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("All done!", "You're ready to go! Use `help` to see what I can do!"));
                     else
-                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Something went wrong", "When attempting to add to database."));
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hmm... Something went wrong!", "I couldn't add you to my database. Go ahead and try again!"));
                 }
 
                 Debugging.Log("Command Handler, DM", $"{context.User.Username} sent {message}");
@@ -94,7 +94,7 @@ namespace lcsbot
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception)
                 {
                     Debugging.Log("Command Handler, DM", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
-                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  DM Error!", result.ErrorReason).Build());
+                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Whoops! Something went wrong!", result.ErrorReason).Build());
                 }
             }
         }

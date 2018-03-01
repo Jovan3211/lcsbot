@@ -26,9 +26,9 @@ namespace lcsbot.Commands
             };
 
             string imageUrl = ImageHandler.GetImageUrl(helpImageName);
-            string description = "I can create teams of league summoners with selected champions and put two teams againts each other.\n" +
-                                 "There are commands called from a server I'm in and commands sent directly to my PMs. Team creations are done from PMs, while battling teams can be done in a server channel.\n" +
-                                 "Below are main commands, call `help command` to get more info on how to use it and see its subcommands.";
+            string description = "I can create teams of league summoners with selected champions and put two teams against each other.\n" +
+                                 "There are commands called from a server I'm in and commands sent directly to my PMs. Team creations are done from PMs, while simulating matches can be done in a server channel.\n" +
+                                 "Below are my main commands, call `help command` to get more info on how to use it and see its subcommands.";
             EmbedBuilder message = messageHandler.BuildEmbed("How to use me properly: ", $"{description}", Palette.Pink, commandTitles, commandDescriptions, imageUrl);
 
             await ReplyAsync("", false, message.Build());
