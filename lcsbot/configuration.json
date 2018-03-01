@@ -1,0 +1,13 @@
+{
+  "ClientId": "client_id_here",
+  "BotToken": "NDE4NTU1MTY3NzI2ODk1MTA0.DXjSmA.n-I7QSZaio3ch90yPM_djDev7Vg",
+  "OwnerIds": [
+    "415941876680491019",
+    "181108473759662081",
+    "140197514958602240"
+  ],
+  "EnableDatabase": false,
+  "BaseHostUrl": "http://139.59.162.138/tenebot/",
+  "SqlServerUrl": "139.59.162.138",
+  "DatabaseName": "lcsbotDatabase"
+}
