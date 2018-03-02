@@ -1,0 +1,13 @@
+02:06:33 Settings    Loaded configuration.json successfully
+02:06:33 SQL Server  Please enter login info
+02:06:46 SetConnecti New connection string set
+02:06:47 Database Te Connection to database is valid
+02:06:47 Discord     Discord.Net v1.0.2 (API v6)
+02:06:47 Gateway     Connecting
+02:06:48 Gateway     Connected
+02:06:49 Gateway     Ready
+02:06:57 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+02:06:57 CheckHttpRe 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+02:06:57 SQL Insert  Inserted records into database
+02:06:57 Add user to Added tenebi to users
+02:06:57 Command Han tenebi sent hiya

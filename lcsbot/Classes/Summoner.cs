@@ -23,6 +23,7 @@ namespace lcsbot.Classes
             this.summonerId = summonerId;
             this.championId = championId;
             this.lane = lane;
+            this.role = role;
         }
 
         public int AddToDatabase()
