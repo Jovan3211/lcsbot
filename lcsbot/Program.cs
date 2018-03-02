@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using lcsbot.Services;
 using lcsbot.Functions;
+using lcsbot.Classes;
 
 namespace lcsbot
 {
@@ -28,6 +29,7 @@ namespace lcsbot
 
             Settings.LoadJson();
             Settings.SqlServerSetup();
+            Debugging.Log("TODO", "make it so functions that use db check if db is enabled in settings");
 
             //subs
             Settings._client.Log += Debugging.Log;

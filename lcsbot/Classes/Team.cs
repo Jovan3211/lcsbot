@@ -2,41 +2,73 @@
 using System;
 using System.Collections.Generic;
 
-namespace lcsbot
+namespace lcsbot.Classes
 {
-    class Team : ILCSBOTClass
+    public class Team : ILCSBOTClass
     {
         private string userId;
-        private List<string> players;
+        private List<Summoner> summoners;
 
         public string UserId { get => userId; set => userId = value; }
-        public List<string> Players { get => players; set => players = value; }
+        public List<Summoner> Summoners { get => summoners; }
 
-        public Team(string userId, List<string> players)
+        public Team(string userId)
         {
             this.userId = userId;
-
-            for (int i = 0; i < 4; i++) //because 5 champions in a team
-                players.Add(players[i]);
         }
 
-        /// <summary>
-        /// Adds team to database.
-        /// </summary>
-        /// <returns>Success</returns>
+        public bool AddSummoner(Summoner summoner)
+        {
+            if (summoners.Count < 5)
+            {
+                summoners.Add(summoner);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool RemoveSummoner(Summoner summoner)
+        {
+            if (summoners.Count > 0)
+            {
+                summoners.Remove(summoner);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public bool CheckReady()
+        {
+            if (summoners.Count == 5)
+                return true;
+
+            return false;
+        }
+
         public bool AddToDatabase()
         {
-            if (players.Count < 5 || players.Count > 5)
+            List<int> summonerIds = new List<int>();
+
+            if (!CheckReady())
             {
-                Debugging.Log("Create team", $"List players in Team class don't have enough or have too many players, must have 5 players total");
+                Debugging.Log("Create team", $"Ready check, team is not ready, not enough or too many players.");
                 return false;
             }
 
             try
             {
-                SqlHandler.Insert("Champions(UserId, Player1Id, Player2Id, Player3Id, Player4Id, Player5Id)", $"'{players[0]}', '{players[1]}', '{players[2]}', '{players[3]}', '{players[4]}'");
+                int counter = 0;
+                foreach (Summoner summoner in summoners)
+                {
+                    summonerIds[counter] = summoner.AddToDatabase();
+                    counter++;
+                }
 
-                Debugging.Log("Create team", $"Created team for user:{userId} with players:{players[0]}, {players[1]}, {players[2]}, {players[3]}, {players[4]}");
+                SqlHandler.Insert("Champions(UserId, Summoner1Id, Summoner2Id, Summoner3Id, Summoner4Id, Summoner5Id)", $"'{summonerIds[0]}', '{summonerIds[1]}', '{summonerIds[2]}', '{summonerIds[3]}', '{summonerIds[4]}'");
+
+                Debugging.Log("Create team", $"Created team for user: {userId} with summoners: {summonerIds[0]}, {summonerIds[1]}, {summonerIds[2]}, {summonerIds[3]}, {summonerIds[4]}");
                 return true;
             }
             catch (Exception e)
@@ -45,6 +77,5 @@ namespace lcsbot
                 return false;
             }
         }
-
     }
 }

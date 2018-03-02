@@ -53,7 +53,7 @@ namespace lcsbot.Commands
 
             List<string> commandTitles = new List<string>
             {
-                "team view", "team save", "team addplayer 'Summoner name/id' 'champ name/id'", "team removeplayer 'Summoner name/id'", "team champ 'Summoner name/ID on your team' 'champion name/ID'"
+                "team view", "team save", "team addplayer 'Summoner name/id' 'champ name/id' `role`", "team removeplayer 'Summoner name/id'", "team champ 'Summoner name/ID on your team' 'champion name/ID'"
             };
             List<string> commandDescriptions = new List<string>
             {
