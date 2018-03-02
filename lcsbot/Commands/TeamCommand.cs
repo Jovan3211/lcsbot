@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
+using RiotSharp;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using lcsbot.Services;
@@ -20,6 +21,9 @@ namespace lcsbot.Commands
         [Command("")]
         public async Task HelpCommand()
         {
+            var champions = StaticRiotApi.GetInstance(Settings.RiotAPIKey).GetChampions(RiotSharp.Misc.Region.euw).Champions;
+            var champ = champions.First(c => c.Key == "Aatrox").Value;
+
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message = messageHandler.BuildEmbed("Team creation and management command", $"Use `help team` to see how to use it.", Palette.Pink);
 

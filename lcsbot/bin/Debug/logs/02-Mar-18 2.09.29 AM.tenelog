@@ -1,0 +1,11 @@
+02:09:29 Settings    Loaded configuration.json successfully
+02:09:29 SQL Server  Please enter login info
+02:12:47 SetConnecti New connection string set
+02:12:48 Database Te Connection to database is valid
+02:12:48 Discord     Discord.Net v1.0.2 (API v6)
+02:12:48 Gateway     Connecting
+02:12:50 Gateway     Connected
+02:12:50 Gateway     Ready
+02:13:03 Command Han tenebi sent test
+02:13:07 Command Han tenebi sent beebe
+02:13:07 Command Han Error with command beebe: Unknown command

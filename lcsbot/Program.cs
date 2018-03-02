@@ -75,10 +75,12 @@ namespace lcsbot
             }
             else if (CheckPrivate(message)) //direct message
             {
+                bool AddingToDB = false;
                 var context = new SocketCommandContext(Settings._client, message);
 
                 if (!CheckUserInDatabase.Check(context.User.Id.ToString())) // checks if user is in database, if not, add
                 {
+                    AddingToDB = true;
                     await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hi there!", "Looks like we've never met before. Nice to meet you! I'm going to quickly add you to my database...", ImageHandler.GetImageUrl("ahriwave")).Build());
 
                     User newUser = new User(context.User.Id.ToString(), context.User.Username);
@@ -93,8 +95,15 @@ namespace lcsbot
                 var result = await Settings._commands.ExecuteAsync(context, argPos, Settings._services);
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception)
                 {
-                    Debugging.Log("Command Handler, DM", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
-                    await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Whoops! Something went wrong!", result.ErrorReason).Build());
+                    if (AddingToDB)
+                    {
+                        AddingToDB = false;
+                    }
+                    else
+                    {
+                        Debugging.Log("Command Handler, DM", $"Error with command {message}: {result.ErrorReason.Replace(".", "")}", LogSeverity.Warning);
+                        await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed(":no_entry_sign:  Whoops! Something went wrong!", result.ErrorReason).Build());
+                    }
                 }
             }
         }
