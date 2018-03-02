@@ -1,0 +1,57 @@
+17:57:59 Settings    Loaded configuration.json successfully
+17:57:59 SQL Server  Please enter login info
+17:58:07 SetConnecti New connection string set
+17:58:08 Database Te Connection to database is valid
+17:58:08 TODO        make it so functions that use db check if db is enabled in settings
+17:58:08 Discord     Discord.Net v1.0.2 (API v6)
+17:58:08 Gateway     Connecting
+17:58:09 Gateway     Connected
+17:58:10 Gateway     Ready
+17:58:19 Command Han Jovan sent team start
+17:58:21 Command Han Jovan sent team addplayer tenebi ahri support
+17:58:23 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at lcsbot.Commands.TeamCommand.GetChampionByName(String name) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 205
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:58:23 Command Han Error with command team addplayer tenebi ahri support: Sequence contains no matching element
+17:59:21 Command Han Jovan sent team view
+17:59:21 Command     Discord.Commands.CommandException: Error occurred executing "view" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Classes.Team.GetSummonersIds() in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 66
+   at lcsbot.Commands.TeamCommand.GetNamesForSummonersInUserTeam(User user) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 157
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 77
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:59:21 Command Han Error with command team view: Object reference not set to an instance of an object
+17:59:28 Command Han Jovan sent team save
+17:59:28 Command     Discord.Commands.CommandException: Error occurred executing "save" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Classes.Team.CheckReady() in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 44
+   at lcsbot.Classes.Team.AddToDatabase() in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 78
+   at lcsbot.Classes.User.SaveTeam() in D:\Gits\lcsbot\lcsbot\Classes\User.cs:line 37
+   at lcsbot.Commands.TeamCommand.<Save>d__5.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 91
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:59:28 Command Han Error with command team save: Object reference not set to an instance of an object
+17:59:31 Command Han Jovan sent team end

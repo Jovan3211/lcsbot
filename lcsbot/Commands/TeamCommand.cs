@@ -79,58 +79,73 @@ namespace lcsbot.Commands
             await ReplyAsync("", false, message.Build());
         }
 
+        [Command("save")]
+        public async Task Save()
+        {
+            string savedMessage = "Team is saved successfully, nothing to worry about I'll keep it safe.";
+            var user = GetUserByIdFromList(Context.User.Id.ToString());
+
+            if (user.Saved)
+                savedMessage = "Team is already saved.";
+            else
+                user.SaveTeam();
+
+            MessageHandler messageHandler = new MessageHandler();
+            EmbedBuilder message = messageHandler.BuildEmbed("Save team", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
+
+            await ReplyAsync("", false, message.Build());
+        }
+
         [Command("addplayer")]
-        public async Task AddPlayer(string summoner, string champion, string role)
+        public async Task AddPlayer(string summoner, string champion, string roleInput)
         {
             MessageHandler handler = new MessageHandler();
 
-            Lane LANE = new Lane();
-            Role ROLE = new Role();
-            switch (role.ToUpper())
-            {
-                case ("ADC"):
-                    LANE = Lane.Bot;
-                    ROLE = Role.DuoCarry;
-                    break;
-                case ("JUNGLE"):
-                    LANE = Lane.Jungle;
-                    ROLE = Role.None;
-                    break;
-                case ("MID"):
-                    LANE = Lane.Mid;
-                    ROLE = Role.Solo;
-                    break;
-                case ("TOP"):
-                    LANE = Lane.Top;
-                    ROLE = Role.Solo;
-                    break;
-                case ("SUPPORT"):
-                    LANE = Lane.Bot;
-                    ROLE = Role.DuoSupport;
-                    break;
-                default:
-                    await ReplyAsync("", false, handler.BuildEmbed("Hmm... Doesn't look like that's a proper role!", "Try one of these instead!: `ADC`  `SUPPORT`  `MID`  `TOP`  `JUNGLE`"));
-            }
-
-            
-            string savedMessage = "";
-
-            Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), LANE, ROLE);
-
-                    break;
-            MessageHandler messageHandler = new MessageHandler();
-
             if (CheckStarted(Context.User.Id.ToString()))
             {
-                Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), /*ADDITIONAL PARAMATERES*/);
+                bool correctLaneRole = true;
+                Lane lane = new Lane();
+                Role role = new Role();
+                switch (roleInput.ToUpper())
+                {
+                    case ("ADC"):
+                        lane = Lane.Bot;
+                        role = Role.DuoCarry;
+                        break;
+                    case ("JUNGLE"):
+                        lane = Lane.Jungle;
+                        role = Role.None;
+                        break;
+                    case ("MID"):
+                        lane = Lane.Mid;
+                        role = Role.Solo;
+                        break;
+                    case ("TOP"):
+                        lane = Lane.Top;
+                        role = Role.Solo;
+                        break;
+                    case ("SUPPORT"):
+                        lane = Lane.Bot;
+                        role = Role.DuoSupport;
+                        break;
+                    default:
+                        correctLaneRole = false;
+                        await ReplyAsync("", false, handler.BuildEmbed("Hmm... Doesn't look like that's a proper role!", "Try one of these instead!: `ADC`  `SUPPORT`  `MID`  `TOP`  `JUNGLE`"));
+                        break;
+                }
 
-                var obj = GetUserByIdFromList(Context.User.Id.ToString());
-                if (obj != null) obj.AddSummonerToTeam(newSummoner);
+                if (correctLaneRole)
+                {
+                    Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role, lane);
 
-                await ReplyAsync("", false, messageHandler.BuildEmbed("Added player to your team", "", Palette.Pink).Build());
+                    var obj = GetUserByIdFromList(Context.User.Id.ToString());
+                    if (obj != null) obj.AddSummonerToTeam(newSummoner);
+
+                    await ReplyAsync("", false, handler.BuildEmbed("Added player to your team", "", Palette.Pink).Build());
+                }
             }
             else
-                await ReplyAsync("", false, messageHandler.BuildEmbed("Start team creating and editing with 'team start'.", "", Palette.Pink).Build());
+                await ReplyAsync("", false, handler.BuildEmbed("Start team creating and editing with 'team start'.", "", Palette.Pink).Build());
         }
 
         private User GetUserByIdFromList(string userId) => userList.FirstOrDefault(x => x.UserId == userId);

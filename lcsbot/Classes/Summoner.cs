@@ -18,7 +18,7 @@ namespace lcsbot.Classes
         public Role Role { get => role; }
         public Lane Lane { get => lane; }
 
-        public Summoner(string summonerId, string championId, Lane lane, Role role)
+        public Summoner(string summonerId, string championId, Role role, Lane lane)
         {
             this.summonerId = summonerId;
             this.championId = championId;
@@ -30,8 +30,8 @@ namespace lcsbot.Classes
         {
             try
             {
-                SqlHandler.Insert("Summoners(SummonerId, ChampionId, Role)", $"'{summonerId}', '{championId}', '{(int)role}'");
-                var selection = SqlHandler.Select("Summoners", "Id", $"SummonerId='{summonerId}' AND ChampionId='{championId}' AND Role='{(int)role}'");
+                SqlHandler.Insert("Summoners(SummonerId, ChampionId, Role, Lane)", $"'{summonerId}', '{championId}', '{(int)role}', '{(int)lane}'");
+                var selection = SqlHandler.Select("Summoners", "Id", $"SummonerId='{summonerId}' AND ChampionId='{championId}' AND Role='{(int)role}' AND Lane='{(int)lane}'");
 
                 Debugging.Log("Create summoner", $"Created new summoner and added to database, id={selection[0]}");
                 return int.Parse(selection[0]);
