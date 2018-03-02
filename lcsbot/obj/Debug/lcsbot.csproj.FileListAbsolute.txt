@@ -50,6 +50,7 @@ D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.pdb
 D:\Gits\lcsbot\lcsbot\bin\Debug\configuration.json
 D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.dll
 D:\Gits\lcsbot\lcsbot\bin\Debug\RiotSharp.xml
+<<<<<<< HEAD
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\bin\Debug\configuration.json
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\bin\Debug\lcsbot.exe.config
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\bin\Debug\lcsbot.exe
@@ -102,3 +103,8 @@ C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\obj\Debug\lcsbot.csprojResolveAssembly
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\obj\Debug\lcsbot.csproj.CoreCompileInputs.cache
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\obj\Debug\lcsbot.exe
 C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\obj\Debug\lcsbot.pdb
+=======
+D:\Gits\lcsbot\lcsbot\bin\Debug\RestSharp.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\System.ValueTuple.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\System.ValueTuple.xml
+>>>>>>> development

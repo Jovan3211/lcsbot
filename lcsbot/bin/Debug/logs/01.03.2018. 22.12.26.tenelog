@@ -1,0 +1,32 @@
+22:12:26 Settings    Loaded configuration.json successfully
+22:12:26 SQL Server  Please enter login info
+22:12:38 SetConnecti New connection string set
+22:12:39 Database Te Connection to database is valid
+22:12:39 Discord     Discord.Net v1.0.2 (API v6)
+22:12:40 Gateway     Connecting
+22:12:40 Gateway     Connected
+22:12:41 Gateway     Ready
+22:12:46 Command Han Jovan called !test
+22:12:46 Command     Discord.Commands.CommandException: Error occurred executing "test" for Jovan#2244 in space hunters/tenebot. ---> Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'lcsbot.Commands.testObject' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at lcsbot.Commands.Test.download_json[T](String url) in D:\Gits\lcsbot\lcsbot\Commands\Test.cs:line 48
+   at lcsbot.Commands.Test.<TestCommand>d__0.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\Test.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+22:12:47 Command Han Error with command !test: Cannot deserialize the current JSON array (eg [1,2,3]) into type 'lcsbotCommandstestObject' because the type requires a JSON object (eg {"name":"value"}) to deserialize correctlyTo fix this error either change the JSON to a JSON object (eg {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (eg ICollection, IList) like List<T> that can be deserialized from a JSON array JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON arrayPath '', line 1, position 1
