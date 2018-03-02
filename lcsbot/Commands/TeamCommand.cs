@@ -25,17 +25,50 @@ namespace lcsbot.Commands
             await ReplyAsync("", false, message.Build());
         }
 
+        [Command("start")]
+        public async Task Start()
+        {
+            MessageHandler messageHandler = new MessageHandler();
+            EmbedBuilder message = messageHandler.BuildEmbed("Team creation and management", $"Started creating and editing team. Write `team end` when done.", Palette.Pink);
+
+            if (CheckStarted(Context.User.Id.ToString()))
+                message = messageHandler.BuildEmbed("Team creation and management", $"You've already started.", Palette.Pink);
+            else
+            {
+                User user = new User(Context.User.Id.ToString(), Context.User.Username);
+                userList.Add(user);
+            }
+
+            await ReplyAsync("", false, message.Build());
+        }
+
+        [Command("end")]
+        public async Task End()
+        {
+            MessageHandler messageHandler = new MessageHandler();
+            EmbedBuilder message = messageHandler.BuildEmbed("Team creation and management", $"Finished team creation and editing.", Palette.Pink);
+
+            if (CheckStarted(Context.User.Id.ToString()))
+                message = messageHandler.BuildEmbed("Team creation and management", $"You haven't started.", Palette.Pink);
+            else
+                userList.RemoveAll(x => x.UserId == Context.User.Id.ToString());
+
+            await ReplyAsync("", false, message.Build());
+        }
+
         [Command("view")]
         public async Task View()
         {
             string savedMessage = "";
-            if (saved)
+            var user = GetUserByIdFromList(Context.User.Id.ToString());
+
+            if (user.Saved)
                 savedMessage = "Team is saved.";
             else
                 savedMessage = "Team is not saved, use `team save` when done.";
 
             MessageHandler messageHandler = new MessageHandler();
-            EmbedBuilder message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummoners(), GetNamesForChampions());
+            EmbedBuilder message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
 
             await ReplyAsync("", false, message.Build());
         }
@@ -43,35 +76,32 @@ namespace lcsbot.Commands
         [Command("addplayer")]
         public async Task AddPlayer(string summoner, string champion, string role)
         {
-            string savedMessage = "";
-
-            Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role);
-
             MessageHandler messageHandler = new MessageHandler();
-            EmbedBuilder message = messageHandler.BuildEmbed("Added player to your team", "", Palette.Pink);
 
-            await ReplyAsync("", false, message.Build());
-        }
-
-        private bool CheckRoleExists(string role)
-        {
-            Role.
-
-            switch (role)
+            if (CheckStarted(Context.User.Id.ToString()))
             {
-                case ""
+                Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), /*ADDITIONAL PARAMATERES*/);
+
+                var obj = GetUserByIdFromList(Context.User.Id.ToString());
+                if (obj != null) obj.AddSummonerToTeam(newSummoner);
+
+                await ReplyAsync("", false, messageHandler.BuildEmbed("Added player to your team", "", Palette.Pink).Build());
             }
+            else
+                await ReplyAsync("", false, messageHandler.BuildEmbed("Start team creating and editing with 'team start'.", "", Palette.Pink).Build());
         }
 
-        /*private List<string> GetNamesForSummoners()
-        {
-            List<string> playerNames = new List<string>();
+        private User GetUserByIdFromList(string userId) => userList.FirstOrDefault(x => x.UserId == userId);
 
-            foreach (string playerid in teamPlayerIds)
+        private List<string> GetNamesForSummonersInUserTeam(User user)
+        {
+            List<string> summonerNames = new List<string>();
+
+            foreach (string summonerId in user.Team.GetSummonersIds())
             {
                 try
                 {
-                    playerNames.Add(RiotAPIClass.api.GetSummonerByAccountId(RiotSharp.Misc.Region.euw, long.Parse(playerid)).Name);
+                    summonerNames.Add(RiotAPIClass.api.GetSummonerByAccountId(RiotSharp.Misc.Region.euw, long.Parse(summonerId)).Name);
                 }
                 catch (Exception e)
                 {
@@ -79,18 +109,18 @@ namespace lcsbot.Commands
                 }
             }
 
-            return playerNames;
+            return summonerNames;
         }
 
-        private List<string> GetNamesForChampions()
+        private List<string> GetNamesForChampionsInUserTeam(User user)
         {
             List<string> champNames = new List<string>();
 
-            foreach (string champId in teamChampionIds)
+            foreach (string champId in user.Team.GetSummonersChampionIds())
             {
                 try
                 {
-                    champNames.Add(GetChampionNameById("asd").Name);
+                    champNames.Add(GetChampionNameById(champId).Name);
                 }
                 catch (Exception e)
                 {
@@ -99,7 +129,18 @@ namespace lcsbot.Commands
             }
 
             return champNames;
-        }*/
+        }
+
+        private bool CheckStarted(string userId)
+        {
+            foreach (User user in userList)
+            {
+                if (user.UserId == userId)
+                    return true;
+            }
+
+            return false;
+        }
 
         private RiotSharp.StaticDataEndpoint.Champion.ChampionStatic GetChampionByName(string name)
         {

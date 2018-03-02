@@ -47,6 +47,30 @@ namespace lcsbot.Classes
             return false;
         }
 
+        public List<string> GetSummonersChampionIds()
+        {
+            List<string> returnList = new List<string>();
+
+            foreach (Summoner summoner in summoners)
+            {
+                returnList.Add(summoner.ChampionId);
+            }
+
+            return returnList;
+        }
+
+        public List<string> GetSummonersIds()
+        {
+            List<string> returnList = new List<string>();
+
+            foreach (Summoner summoner in summoners)
+            {
+                returnList.Add(summoner.SummonerId);
+            }
+
+            return returnList;
+        }
+
         public bool AddToDatabase()
         {
             List<int> summonerIds = new List<int>();
