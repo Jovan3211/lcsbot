@@ -1,0 +1,60 @@
+03:16:16 Settings    Loaded configuration.json successfully
+03:16:16 SQL Server  Please enter login info
+03:16:32 SetConnecti New connection string set
+03:16:33 Database Te Connection to database is valid
+03:16:33 TODO        make it so functions that use db check if db is enabled in settings
+03:16:33 Discord     Discord.Net v1.0.2 (API v6)
+03:16:33 Gateway     Connecting
+03:16:34 Gateway     Connected
+03:16:34 Gateway     Ready
+03:16:43 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+03:16:43 CheckHttpRe 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+03:16:44 SQL Insert  Inserted records into database
+03:16:44 Add user to Added Jovan to users
+03:16:44 Command Han Jovan sent !help
+03:16:45 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+03:16:45 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+03:16:46 Gateway     A MessageReceived handler is blocking the gateway task.
+03:16:46 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 97
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+03:17:05 Command Han Jovan sent help team
+03:17:05 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+03:17:06 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+03:17:10 Command Han Jovan sent team view
+03:17:18 Command Han Jovan sent team addplayer tenebi ahri mid
+03:17:19 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> System.AggregateException: One or more errors occurred. ---> System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.Http.WinHttpException: The server name or address could not be resolved
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Net.Http.WinHttpHandler.<StartRequest>d__103.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Net.Http.HttpClient.<FinishSendAsync>d__58.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at RiotSharp.Http.RequesterBase.Get(HttpRequestMessage request)
+   at RiotSharp.Http.RateLimitedRequester.CreateGetRequest(String relativeUrl, Region region, List`1 addedArguments, Boolean useHttps)
+   at RiotSharp.RiotApi.GetSummonerByName(Region region, String summonerName)
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 51
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+03:17:19 Command Han Error with command team addplayer tenebi ahri mid: One or more errors occurred

@@ -28,6 +28,7 @@ namespace lcsbot
 
             Settings.LoadJson();
             Settings.SqlServerSetup();
+            Debugging.Log("TODO", "make it so functions that use db check if db is enabled in settings");
 
             //subs
             Settings._client.Log += Debugging.Log;

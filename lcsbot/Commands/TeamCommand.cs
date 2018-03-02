@@ -15,7 +15,7 @@ namespace lcsbot.Commands
     {
         private List<string> teamPlayerIds = new List<string>();
         private List<string> teamChampionIds = new List<string>();
-        private List<string> teamRoleIds = new List<string>();
+        private List<string> teamRoles = new List<string>();
 
         private bool saved = false;
 
@@ -38,17 +38,19 @@ namespace lcsbot.Commands
                 savedMessage = "Team is not saved, use `team save` when done.";
 
             MessageHandler messageHandler = new MessageHandler();
-            EmbedBuilder message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummoners(), GetNamesForSummoners());
+            EmbedBuilder message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummoners(), GetNamesForChampions());
 
             await ReplyAsync("", false, message.Build());
         }
 
         [Command("addplayer")]
-        public async Task AddPlayer(string summoner, string champion)
+        public async Task AddPlayer(string summoner, string champion, string role)
         {
             string savedMessage = "";
 
-
+            teamPlayerIds.Add(RiotAPI.api.GetSummonerByName(RiotSharp.Misc.Region.global, summoner).Id.ToString());
+            teamChampionIds.Add(GetChampionByName(champion).Id.ToString());
+            teamRoles.Add(role);
 
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message = messageHandler.BuildEmbed("Added player to your team", "", Palette.Pink);
@@ -77,13 +79,13 @@ namespace lcsbot.Commands
 
         private List<string> GetNamesForChampions()
         {
-            List<string> playerNames = new List<string>();
+            List<string> champNames = new List<string>();
 
-            foreach (string playerid in teamPlayerIds)
+            foreach (string champId in teamChampionIds)
             {
                 try
                 {
-                    playerNames.Add(GetChampionByName("asd"));
+                    champNames.Add(GetChampionNameById("asd").Name);
                 }
                 catch (Exception e)
                 {
@@ -91,18 +93,20 @@ namespace lcsbot.Commands
                 }
             }
 
-            return playerNames;
+            return champNames;
         }
 
         private RiotSharp.StaticDataEndpoint.Champion.ChampionStatic GetChampionByName(string name)
         {
-            var champions = RiotAPI.staticapi.GetChampions(RiotSharp.Misc.Region.global).Champions;
+            var champions = StaticRiotApi.GetInstance(Settings.RiotAPIKey).GetChampions(RiotSharp.Misc.Region.euw).Champions;
+            return champions.First(c => c.Key == name).Value;
+        }
 
-            foreach (RiotSharp.StaticDataEndpoint.Champion.ChampionStatic champ in champions)
-            {
-                if (champ.Name == name)
-                    return champ;
-            }
+        // todo: try catch for shit
+        private RiotSharp.StaticDataEndpoint.Champion.ChampionStatic GetChampionNameById(string id)
+        {
+            var champions = StaticRiotApi.GetInstance(Settings.RiotAPIKey).GetChampions(RiotSharp.Misc.Region.euw).Champions;
+            return champions.First(c => c.Value.ToString() == id).Value;
         }
     }
 }

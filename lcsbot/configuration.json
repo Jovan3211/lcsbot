@@ -6,7 +6,7 @@
     "181108473759662081",
     "140197514958602240"
   ],
-  "EnableDatabase": false,
+  "EnableDatabase": true,
   "BaseHostUrl": "http://139.59.162.138/lcsbot/",
   "SqlServerUrl": "139.59.162.138",
   "DatabaseName": "lcsbotDatabase",
