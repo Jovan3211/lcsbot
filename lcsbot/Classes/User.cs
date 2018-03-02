@@ -1,26 +1,33 @@
 ﻿using lcsbot.Services;
 using System;
 
-namespace lcsbot
+namespace lcsbot.Classes
 {
-    class User : ILCSBOTClass
+    public class User : ILCSBOTClass
     {
         private string userId;
         private string username;
+        private Team team;
 
         public string UserId { get => userId; set => userId = value; }
         public string Username { get => username; set => username = value; }
+        public Team Team { get => team; }
 
         public User(string userId, string username)
         {
             this.userId = userId;
             this.username = username;
+            team = new Team(userId);
         }
 
-        /// <summary>
-        /// Adds user to database.
-        /// </summary>
-        /// <returns>Success</returns>
+        private bool CheckTeamReady() => team.CheckReady();
+
+        public bool AddSummonerToTeam(Summoner summoner) => team.AddSummoner(summoner);
+
+        public bool RemoveSummonerFromTeam(Summoner summoner) => team.RemoveSummoner(summoner);
+
+        public bool SaveTeam() => team.AddToDatabase();
+
         public bool AddToDatabase()
         {
             try

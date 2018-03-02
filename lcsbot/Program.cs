@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using lcsbot.Services;
 using lcsbot.Functions;
+using lcsbot.Classes;
 
 namespace lcsbot
 {

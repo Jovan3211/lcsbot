@@ -154,9 +154,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Champion.cs" />
     <Compile Include="Classes\Palette.cs" />
     <Compile Include="Classes\ILCSBOTClass.cs" />
+    <Compile Include="Classes\Summoner.cs" />
     <Compile Include="Commands\Help.cs" />
     <Compile Include="Commands\TeamCommand.cs" />
     <Compile Include="Commands\Test.cs" />

@@ -7,17 +7,14 @@ using RiotSharp;
 using lcsbot.Riot;
 using System;
 using System.Linq;
+using lcsbot.Classes;
 
 namespace lcsbot.Commands
 {
     [Group("team"), RequireContext(ContextType.DM)]
     public class TeamCommand : ModuleBase<SocketCommandContext>
     {
-        private List<string> teamPlayerIds = new List<string>();
-        private List<string> teamChampionIds = new List<string>();
-        private List<string> teamRoles = new List<string>();
-
-        private bool saved = false;
+        public static List<User> userList = new List<User>();
 
         [Command("")]
         public async Task HelpCommand()
@@ -48,9 +45,7 @@ namespace lcsbot.Commands
         {
             string savedMessage = "";
 
-            teamPlayerIds.Add(RiotAPI.api.GetSummonerByName(RiotSharp.Misc.Region.global, summoner).Id.ToString());
-            teamChampionIds.Add(GetChampionByName(champion).Id.ToString());
-            teamRoles.Add(role);
+            Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role);
 
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message = messageHandler.BuildEmbed("Added player to your team", "", Palette.Pink);
@@ -58,7 +53,17 @@ namespace lcsbot.Commands
             await ReplyAsync("", false, message.Build());
         }
 
-        private List<string> GetNamesForSummoners()
+        private bool CheckRoleExists(string role)
+        {
+            Role.
+
+            switch (role)
+            {
+                case ""
+            }
+        }
+
+        /*private List<string> GetNamesForSummoners()
         {
             List<string> playerNames = new List<string>();
 
@@ -66,7 +71,7 @@ namespace lcsbot.Commands
             {
                 try
                 {
-                    playerNames.Add(RiotAPI.api.GetSummonerByAccountId(RiotSharp.Misc.Region.global, long.Parse(playerid)).Name);
+                    playerNames.Add(RiotAPIClass.api.GetSummonerByAccountId(RiotSharp.Misc.Region.euw, long.Parse(playerid)).Name);
                 }
                 catch (Exception e)
                 {
@@ -94,7 +99,7 @@ namespace lcsbot.Commands
             }
 
             return champNames;
-        }
+        }*/
 
         private RiotSharp.StaticDataEndpoint.Champion.ChampionStatic GetChampionByName(string name)
         {
