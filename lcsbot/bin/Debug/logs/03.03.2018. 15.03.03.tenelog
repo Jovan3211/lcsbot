@@ -1,0 +1,42 @@
+15:03:03 Settings    Loaded configuration.json successfully
+15:03:03 SQL Server  Please enter login info
+15:03:14 SetConnecti New connection string set
+15:03:15 Database Te Connection to database is valid
+15:03:15 TODO        make it so functions that use db check if db is enabled in settings
+15:03:15 Discord     Discord.Net v1.0.2 (API v6)
+15:03:16 Gateway     Connecting
+15:03:17 Gateway     Connected
+15:03:18 Gateway     Ready
+15:03:23 Command Han Jovan sent team addplayer tenebi ahri mid
+15:03:28 Command Han Jovan sent team start
+15:03:32 Command Han Jovan sent team addplayer tenebi ahri mid
+15:03:33 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at lcsbot.Commands.TeamCommand.GetChampionByName(String name) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 205
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 139
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:03:33 Command Han Error with command team addplayer tenebi ahri mid: Sequence contains no matching element
+15:03:38 Command Han tenebi sent team start
+15:03:43 Command Han tenebi sent team addplayer tenebi Ahri mid
+15:03:44 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for tenebi#4551 in @tenebi#4551. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Classes.Team.AddSummoner(Summoner summoner) in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 22
+   at lcsbot.Classes.User.AddSummonerToTeam(Summoner summoner) in D:\Gits\lcsbot\lcsbot\Classes\User.cs:line 29
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 142
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:03:44 Command Han Error with command team addplayer tenebi Ahri mid: Object reference not set to an instance of an object

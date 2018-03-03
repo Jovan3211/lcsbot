@@ -1,0 +1,27 @@
+15:44:02 Settings    Loaded configuration.json successfully
+15:44:02 SQL Server  Please enter login info
+15:44:10 SetConnecti New connection string set
+15:44:10 Database Te Connection to database is valid
+15:44:10 TODO        make it so functions that use db check if db is enabled in settings
+15:44:11 Discord     Discord.Net v1.0.2 (API v6)
+15:44:11 Gateway     Connecting
+15:44:12 Gateway     Connected
+15:44:12 Gateway     Ready
+15:44:17 Command Han Jovan sent team start
+15:44:21 Command Han Jovan sent team addplayer tenebi ahri mid
+15:44:24 Command Han Jovan sent team view
+15:44:24 GetChampion Error getting champion name by id: Sequence contains no matching element
+15:44:24 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+15:44:24 Command     Discord.Commands.CommandException: Error occurred executing "view" for Jovan#2244 in @Jovan#2244. ---> System.Exception: fieldValue list cannot be empty.
+   at lcsbot.Services.MessageHandler.BuildEmbed(String title, String description, Color color, List`1 fieldTitles, List`1 fieldValue, String thumbnailUrl) in D:\Gits\lcsbot\lcsbot\Services\MessageHandler.cs:line 76
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 77
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:44:24 Command Han Error with command team view: fieldValue list cannot be empty

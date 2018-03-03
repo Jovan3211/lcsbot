@@ -1,0 +1,42 @@
+15:09:32 Settings    Loaded configuration.json successfully
+15:09:32 SQL Server  Please enter login info
+15:09:42 SetConnecti New connection string set
+15:09:43 Database Te Connection to database is valid
+15:09:43 TODO        make it so functions that use db check if db is enabled in settings
+15:09:43 Discord     Discord.Net v1.0.2 (API v6)
+15:09:43 Gateway     Connecting
+15:09:44 Gateway     Connected
+15:09:45 Gateway     Ready
+15:09:53 Command Han Jovan sent team start
+15:09:57 Command Han Jovan sent team addplayer tenebi ahri mid
+15:09:58 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Classes.Team.AddSummoner(Summoner summoner) in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 22
+   at lcsbot.Classes.User.AddSummonerToTeam(Summoner summoner) in D:\Gits\lcsbot\lcsbot\Classes\User.cs:line 29
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 144
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:09:58 Command Han Error with command team addplayer tenebi ahri mid: Object reference not set to an instance of an object
+15:10:11 Command Han Jovan sent team end
+15:10:14 Command Han Jovan sent team start
+15:10:18 Command Han Jovan sent team view
+15:10:18 Command     Discord.Commands.CommandException: Error occurred executing "view" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Classes.Team.GetSummonersIds() in D:\Gits\lcsbot\lcsbot\Classes\Team.cs:line 66
+   at lcsbot.Commands.TeamCommand.GetNamesForSummonersInUserTeam(User user) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 159
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 77
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:10:18 Command Han Error with command team view: Object reference not set to an instance of an object

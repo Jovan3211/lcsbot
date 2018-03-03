@@ -24,7 +24,7 @@ namespace lcsbot.Classes
             saved = false;
         }
 
-        private bool CheckTeamReady() => team.CheckReady();
+        public bool CheckTeamReady() => team.CheckReady();
 
         public bool AddSummonerToTeam(Summoner summoner) => team.AddSummoner(summoner);
 

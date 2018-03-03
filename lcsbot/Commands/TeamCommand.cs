@@ -54,7 +54,7 @@ namespace lcsbot.Commands
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message = messageHandler.BuildEmbed("Team creation and management", $"Finished team creation and editing.", Palette.Pink);
 
-            if (CheckStarted(Context.User.Id.ToString()))
+            if (!CheckStarted(Context.User.Id.ToString()))
                 message = messageHandler.BuildEmbed("Team creation and management", $"You haven't started.", Palette.Pink);
             else
                 userList.RemoveAll(x => x.UserId == Context.User.Id.ToString());
@@ -85,10 +85,15 @@ namespace lcsbot.Commands
             string savedMessage = "Team is saved successfully, nothing to worry about I'll keep it safe.";
             var user = GetUserByIdFromList(Context.User.Id.ToString());
 
-            if (user.Saved)
-                savedMessage = "Team is already saved.";
+            if (user.CheckTeamReady())
+            {
+                if (user.Saved)
+                    savedMessage = "Team is already saved.";
+                else
+                    user.SaveTeam();
+            }
             else
-                user.SaveTeam();
+                savedMessage = "Hmm, looks like your loadout isn't quite ready yet. You need 5 players in your team.";
 
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message = messageHandler.BuildEmbed("Save team", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
@@ -136,6 +141,8 @@ namespace lcsbot.Commands
 
                 if (correctLaneRole)
                 {
+                    champion = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(champion);
+
                     Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role, lane);
 
                     var obj = GetUserByIdFromList(Context.User.Id.ToString());
@@ -158,7 +165,7 @@ namespace lcsbot.Commands
             {
                 try
                 {
-                    summonerNames.Add(RiotAPIClass.api.GetSummonerByAccountId(RiotSharp.Misc.Region.euw, long.Parse(summonerId)).Name);
+                    summonerNames.Add(RiotAPIClass.api.GetSummonerBySummonerId(RiotSharp.Misc.Region.euw, long.Parse(summonerId)).Name);
                 }
                 catch (Exception e)
                 {
@@ -181,7 +188,7 @@ namespace lcsbot.Commands
                 }
                 catch (Exception e)
                 {
-                    Debugging.Log("GetNamesForChampions", $"Error getting champion and/or adding to list: {e.Message}");
+                    Debugging.Log("GetNamesForChampions", $"Error getting champion and/or adding to list: {e.Message}", LogSeverity.Error);
                 }
             }
 
@@ -205,11 +212,18 @@ namespace lcsbot.Commands
             return champions.First(c => c.Key == name).Value;
         }
 
-        // #TODO: try catch for shit
         private RiotSharp.StaticDataEndpoint.Champion.ChampionStatic GetChampionNameById(string id)
         {
-            var champions = StaticRiotApi.GetInstance(Settings.RiotAPIKey).GetChampions(RiotSharp.Misc.Region.euw).Champions;
-            return champions.First(c => c.Value.ToString() == id).Value;
+            try
+            {
+                var champions = StaticRiotApi.GetInstance(Settings.RiotAPIKey).GetChampions(RiotSharp.Misc.Region.euw).Champions;
+                return champions.First(c => c.Value.Id.ToString() == id).Value;
+            }
+            catch (Exception e)
+            {
+                Debugging.Log("GetChampionNameById", $"Error getting champion name by id: {e.Message}", LogSeverity.Error);
+                return null;
+            }
         }
     }
 }

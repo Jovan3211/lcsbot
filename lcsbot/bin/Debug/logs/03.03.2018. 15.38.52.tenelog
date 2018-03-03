@@ -1,0 +1,39 @@
+15:38:52 Settings    Loaded configuration.json successfully
+15:38:52 SQL Server  Please enter login info
+15:39:00 SetConnecti New connection string set
+15:39:01 Database Te Connection to database is valid
+15:39:01 TODO        make it so functions that use db check if db is enabled in settings
+15:39:01 Discord     Discord.Net v1.0.2 (API v6)
+15:39:01 Gateway     Connecting
+15:39:02 Gateway     Connected
+15:39:02 Gateway     Ready
+15:39:09 Command Han Jovan sent team start
+15:39:12 Command Han Jovan sent team addplayer tenebi ahri mid
+15:39:18 Command Han Jovan sent team view
+15:41:28 GetNamesFor Error getting champion and/or adding to list: Sequence contains no matching element
+15:41:28 Command     Discord.Commands.CommandException: Error occurred executing "view" for Jovan#2244 in @Jovan#2244. ---> System.Exception: fieldValue list cannot be empty.
+   at lcsbot.Services.MessageHandler.BuildEmbed(String title, String description, Color color, List`1 fieldTitles, List`1 fieldValue, String thumbnailUrl) in D:\Gits\lcsbot\lcsbot\Services\MessageHandler.cs:line 76
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 77
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:41:28 Command Han Error with command team view: fieldValue list cannot be empty
+15:41:28 Gateway     A MessageReceived handler is blocking the gateway task.
+15:41:29 Gateway     System.Exception: WebSocket connection was closed ---> Discord.Net.WebSocketClosedException: The server sent close 1000: ""
+   at Discord.Net.WebSockets.DefaultWebSocketClient.<RunAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.ConnectionManager.<>c__DisplayClass28_0.<<StartAsync>b__0>d.MoveNext()
+15:41:29 Gateway     Disconnecting
+15:41:29 Gateway     Disconnected
+15:41:30 Gateway     Connecting
+15:41:30 Gateway     Failed to resume previous session
+15:41:30 Gateway     Connected
+15:41:31 Gateway     Ready

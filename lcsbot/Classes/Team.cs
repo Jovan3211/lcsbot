@@ -14,6 +14,7 @@ namespace lcsbot.Classes
 
         public Team(string userId)
         {
+            summoners = new List<Summoner>();
             this.userId = userId;
         }
 

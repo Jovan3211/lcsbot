@@ -1,0 +1,12 @@
+15:46:38 Settings    Loaded configuration.json successfully
+15:46:38 SQL Server  Please enter login info
+15:46:45 SetConnecti New connection string set
+15:46:46 Database Te Connection to database is valid
+15:46:46 TODO        make it so functions that use db check if db is enabled in settings
+15:46:46 Discord     Discord.Net v1.0.2 (API v6)
+15:46:46 Gateway     Connecting
+15:46:47 Gateway     Connected
+15:46:48 Gateway     Ready
+15:46:54 Command Han Jovan sent team start
+15:46:56 Command Han Jovan sent team addplayer tenebi ahri mid
+15:47:02 Command Han Jovan sent team view

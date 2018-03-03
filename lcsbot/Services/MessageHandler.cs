@@ -1,5 +1,6 @@
 ﻿using Discord;
 using Discord.Commands;
+using System;
 using System.Collections.Generic;
 
 namespace lcsbot.Services
@@ -68,6 +69,11 @@ namespace lcsbot.Services
 
             if (thumbnailUrl != "")
                 message.WithThumbnailUrl(thumbnailUrl);
+
+            if (fieldTitles.Count < 1)
+                throw new Exception("fieldTitles list cannot be empty.");
+            if (fieldValue.Count < 1)
+                throw new Exception("fieldValue list cannot be empty.");
 
             int counter = 0;
             foreach (string fieldTitle in fieldTitles)

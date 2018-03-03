@@ -1,0 +1,43 @@
+15:55:45 Settings    Loaded configuration.json successfully
+15:55:45 SQL Server  Please enter login info
+15:55:52 SetConnecti New connection string set
+15:55:53 Database Te Connection to database is valid
+15:55:53 TODO        make it so functions that use db check if db is enabled in settings
+15:55:53 Discord     Discord.Net v1.0.2 (API v6)
+15:55:53 Gateway     Connecting
+15:55:54 Gateway     Connected
+15:55:54 Gateway     Ready
+15:56:08 Command Han Jovan sent team start
+15:56:14 Command Han Jovan sent team addplayer tenebi ahri mid
+15:56:15 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> RiotSharp.RiotSharpException: 429, Rate Limit Exceeded
+   at RiotSharp.Http.RequesterBase.HandleRequestFailure(HttpStatusCode statusCode)
+   at RiotSharp.Http.RequesterBase.Get(HttpRequestMessage request)
+   at RiotSharp.Http.RateLimitedRequester.CreateGetRequest(String relativeUrl, Region region, List`1 addedArguments, Boolean useHttps)
+   at RiotSharp.StaticRiotApi.GetChampions(Region region, ChampionData championData, Language language)
+   at lcsbot.Commands.TeamCommand.GetChampionByName(String name) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 211
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 146
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:56:15 Command Han Error with command team addplayer tenebi ahri mid: 429, Rate Limit Exceeded
+15:56:37 Command Han Jovan sent team save
+15:56:37 Command     Discord.Commands.CommandException: Error occurred executing "save" for Jovan#2244 in @Jovan#2244. ---> System.Exception: fieldTitles list cannot be empty.
+   at lcsbot.Services.MessageHandler.BuildEmbed(String title, String description, Color color, List`1 fieldTitles, List`1 fieldValue, String thumbnailUrl) in D:\Gits\lcsbot\lcsbot\Services\MessageHandler.cs:line 74
+   at lcsbot.Commands.TeamCommand.<Save>d__5.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 99
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+15:56:37 Command Han Error with command team save: fieldTitles list cannot be empty
+15:56:43 Command Han Jovan sent team end

@@ -52,3 +52,6 @@ D:\Gits\lcsbot\lcsbot\bin\Debug\System.ValueTuple.xml
 D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.csproj.CoreCompileInputs.cache
 D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.exe
 D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.pdb
+D:\Gits\lcsbot\lcsbot\obj\Debug\lcsbot.csprojResolveAssemblyReference.cache
+D:\Gits\lcsbot\lcsbot\bin\Debug\BCrypt.Net-Next.dll
+D:\Gits\lcsbot\lcsbot\bin\Debug\BCrypt.Net-Next.xml
