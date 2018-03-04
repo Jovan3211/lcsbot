@@ -84,14 +84,12 @@ namespace lcsbot.Classes
 
             try
             {
-                int counter = 0;
                 foreach (Summoner summoner in summoners)
                 {
-                    summonerIds[counter] = summoner.AddToDatabase();
-                    counter++;
+                    summonerIds.Add(summoner.AddToDatabase());
                 }
 
-                SqlHandler.Insert("Champions(UserId, Summoner1Id, Summoner2Id, Summoner3Id, Summoner4Id, Summoner5Id)", $"'{summonerIds[0]}', '{summonerIds[1]}', '{summonerIds[2]}', '{summonerIds[3]}', '{summonerIds[4]}'");
+                SqlHandler.Insert("Teams(UserId, Summoner1Id, Summoner2Id, Summoner3Id, Summoner4Id, Summoner5Id)", $"'{userId}', '{summonerIds[0]}', '{summonerIds[1]}', '{summonerIds[2]}', '{summonerIds[3]}', '{summonerIds[4]}'");
 
                 Debugging.Log("Create team", $"Created team for user: {userId} with summoners: {summonerIds[0]}, {summonerIds[1]}, {summonerIds[2]}, {summonerIds[3]}, {summonerIds[4]}");
                 return true;

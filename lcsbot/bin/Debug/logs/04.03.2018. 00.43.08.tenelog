@@ -1,0 +1,32 @@
+00:43:08 Settings    Loaded configuration.json successfully
+00:43:08 SQL Server  Please enter login info
+00:43:18 SetConnecti New connection string set
+00:43:19 Database Te Connection to database is valid
+00:43:19 TODO        make it so functions that use db check if db is enabled in settings
+00:43:19 Discord     Discord.Net v1.0.2 (API v6)
+00:43:19 Gateway     Connecting
+00:43:21 Gateway     Connected
+00:43:21 Gateway     Ready
+00:43:29 Command Han Jovan sent team start
+00:43:33 Command Han Jovan sent team addplayer tenebi ahri mid
+00:43:35 Command Han Jovan sent team addplayer tenebi ahri mid
+00:43:36 Command Han Jovan sent team addplayer tenebi ahri mid
+00:43:37 Command Han Jovan sent team addplayer tenebi ahri mid
+00:43:37 Command Han Jovan sent team addplayer tenebi ahri mid
+00:43:38 Rest        Preemptive Rate limit triggered: channels/418584773884379136/messages
+00:43:40 Gateway     A MessageReceived handler is blocking the gateway task.
+00:43:41 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+00:43:47 Command Han Jovan sent team view
+00:43:50 Command Han Jovan sent team save
+00:44:27 SQL Insert  Inserted records into database
+00:45:08 Create summ Created new summoner and added to database, id=1

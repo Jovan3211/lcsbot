@@ -1,0 +1,42 @@
+00:38:00 Settings    Loaded configuration.json successfully
+00:38:00 SQL Server  Please enter login info
+00:38:18 SetConnecti New connection string set
+00:38:19 Database Te Connection to database is valid
+00:38:19 TODO        make it so functions that use db check if db is enabled in settings
+00:38:19 Discord     Discord.Net v1.0.2 (API v6)
+00:38:19 Gateway     Connecting
+00:38:21 Gateway     Connected
+00:38:21 Gateway     Ready
+00:38:47 Command Han Jovan sent team start
+00:38:54 Command Han Jovan sent team addplayer tenebi ahri mid
+00:38:56 Command Han Jovan sent team addplayer tenebi ahri mid
+00:38:58 Command Han Jovan sent team addplayer tenebi ahri mid
+00:38:59 Command Han Jovan sent team addplayer tenebi ahri mid
+00:39:03 Command Han Jovan sent team addplayer tenebi ahri mid
+00:39:05 Command Han Jovan sent team view
+00:39:09 Command Han Jovan sent team save
+00:40:20 SQL Insert  Inserted records into database
+00:40:20 Create summ Created new summoner and added to database, id=1
+00:40:20 Create team Error: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+00:40:20 Gateway     A MessageReceived handler is blocking the gateway task.
+00:40:21 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+00:40:21 Gateway     System.Exception: WebSocket connection was closed ---> Discord.Net.WebSocketClosedException: The server sent close 1000: ""
+   at Discord.Net.WebSockets.DefaultWebSocketClient.<RunAsync>d__32.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.ConnectionManager.<>c__DisplayClass28_0.<<StartAsync>b__0>d.MoveNext()
+00:40:21 Gateway     Disconnecting
+00:40:21 Gateway     Disconnected
+00:40:22 Gateway     Connecting
+00:40:23 Gateway     Resumed previous session

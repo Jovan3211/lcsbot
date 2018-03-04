@@ -1,0 +1,43 @@
+00:12:32 Settings    Loaded configuration.json successfully
+00:12:32 SQL Server  Please enter login info
+00:12:52 SetConnecti New connection string set
+00:12:52 Database Te Connection to database is valid
+00:12:52 TODO        make it so functions that use db check if db is enabled in settings
+00:12:52 Discord     Discord.Net v1.0.2 (API v6)
+00:12:53 Gateway     Connecting
+00:12:54 Gateway     Connected
+00:12:54 Gateway     Ready
+00:13:30 Command Han Jovan sent team start
+00:13:33 Command Han Jovan sent team addplayer tenebi ahri mid
+00:13:38 Command Han Jovan sent team save
+00:14:07 Command Han Jovan sent team addplayer tenebi ragnar top
+00:14:07 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at lcsbot.Commands.TeamCommand.GetChampionByName(String name) in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 212
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__6.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 146
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+00:14:07 Command Han Error with command team addplayer tenebi ragnar top: Sequence contains no matching element
+00:14:29 Command Han Jovan sent team addplayer tenebi sona top
+00:14:40 Command Han Jovan sent team addplayer tenebi xayah mid
+00:14:49 Command Han Jovan sent team addplayer tenebi zoe bot
+00:14:57 Command Han Jovan sent team addplayer tenebi zoe adc
+00:15:01 Command Han Jovan sent team vieww
+00:15:01 Command Han Error with command team vieww: The input text has too many parameters
+00:15:03 Command Han Jovan sent team view
+00:15:42 Command Han Jovan sent team addplayer tenebi jinx jungle
+00:15:54 Command Han Jovan sent team addplayer tenebi katarina support
+00:15:57 Command Han Jovan sent team view
+00:16:05 Command Han Jovan sent team addplayer tenebi katarina support
+00:16:15 Command Han Jovan sent team view
+00:16:21 Command Han Jovan sent team save
+00:16:21 SQL Insert  Inserted records into database
+00:16:22 Create summ Created new summoner and added to database, id=1
+00:16:22 Create team Error: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index

@@ -1,0 +1,43 @@
+00:57:20 Settings    Loaded configuration.json successfully
+00:57:20 SQL Server  Please enter login info
+00:57:28 SetConnecti New connection string set
+00:57:28 Database Te Connection to database is valid
+00:57:28 TODO        make it so functions that use db check if db is enabled in settings
+00:57:28 Discord     Discord.Net v1.0.2 (API v6)
+00:57:29 Gateway     Connecting
+00:57:29 Gateway     Connected
+00:57:30 Gateway     Ready
+00:57:39 Command Han Jovan sent team start
+00:57:46 Command Han Jovan sent team addplayer tenebi ahri mid
+00:57:51 Command Han Jovan sent team addplayer tenebi xayah mid
+00:57:53 Command Han Jovan sent team addplayer tenebi zoe mid
+00:57:57 Command Han Jovan sent team addplayer tenebi katarinamid
+00:57:57 Command Han Error with command team addplayer tenebi katarinamid: The input text has too many parameters
+00:58:04 Command Han Jovan sent team addplayer tenebi katarina mid
+00:58:06 Command Han Jovan sent team view
+00:58:11 Command Han Jovan sent team addplayer tenebi sona mid
+00:58:14 Command Han Jovan sent team save
+00:58:15 SQL Insert  Inserted records into database
+00:58:15 Create summ Created new summoner and added to database, id=10
+00:58:15 SQL Insert  Inserted records into database
+00:58:15 Create summ Created new summoner and added to database, id=11
+00:58:15 SQL Insert  Inserted records into database
+00:58:16 Create summ Created new summoner and added to database, id=12
+00:58:16 SQL Insert  Inserted records into database
+00:58:16 Create summ Created new summoner and added to database, id=13
+00:58:16 SQL Insert  Inserted records into database
+00:58:16 Create summ Created new summoner and added to database, id=14
+00:58:17 SQL Insert  Error inserting records: Column count doesn't match value count at row 1
+00:58:17 Create team Created team for user: 140197514958602240 with summoners: 10, 11, 12, 13, 14
+00:58:17 Gateway     A MessageReceived handler is blocking the gateway task.
+00:58:17 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 106
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()

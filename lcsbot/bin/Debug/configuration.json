@@ -10,6 +10,6 @@
   "BaseHostUrl": "http://139.59.162.138/lcsbot/",
   "SqlServerUrl": "139.59.162.138",
   "DatabaseName": "lcsbotDatabase",
-  "RiotAPIKey": "RGAPI-79900c96-e08a-4e2f-b95d-be9ab73c4a31",
+  "RiotAPIKey": "RGAPI-b694818f-0b62-485c-a3a0-013ef08232b2",
   "ChampionGGAPIKey": "9d30e87ffd52401b8387aa20cf2c701e"
 }
