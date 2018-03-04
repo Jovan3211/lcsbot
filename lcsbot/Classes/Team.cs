@@ -28,14 +28,16 @@ namespace lcsbot.Classes
                 summoners.Clear();
                 foreach (string item in selectionSummonerIds)
                 {
-                    List<string> summonerSelection = SqlHandler.Select("Summoners", "SummonerId, ChampionId, Role, Lane", $"SummonerId='{selectionSummonerIds[0]}'");
+                    List<string> summonerSelection = SqlHandler.Select("Summoners", "SummonerId, ChampionId, Role, Lane, Region", $"SummonerId='{selectionSummonerIds[0]}'");
 
                     Role role;
                     Enum.TryParse(summonerSelection[2], out role);
                     Lane lane;
                     Enum.TryParse(summonerSelection[3], out lane);
+                    RiotSharp.Misc.Region region;
+                    Enum.TryParse(summonerSelection[4], out region);
 
-                    summoners.Add(new Summoner(summonerSelection[0], summonerSelection[1], role, lane));
+                    summoners.Add(new Summoner(summonerSelection[0], summonerSelection[1], role, lane, region));
                 }
 
                 return true;

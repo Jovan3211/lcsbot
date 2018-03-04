@@ -12,26 +12,28 @@ namespace lcsbot.Classes
         private string championId;
         private Role role;
         private Lane lane;
+        private RiotSharp.Misc.Region region;
             
         public string SummonerId { get => summonerId; }
         public string ChampionId { get => championId; }
         public Role Role { get => role; }
         public Lane Lane { get => lane; }
 
-        public Summoner(string summonerId, string championId, Role role, Lane lane)
+        public Summoner(string summonerId, string championId, Role role, Lane lane, RiotSharp.Misc.Region region)
         {
             this.summonerId = summonerId;
             this.championId = championId;
             this.lane = lane;
             this.role = role;
+            this.region = region;
         }
 
         public int AddToDatabase()
         {
             try
             {
-                SqlHandler.Insert("Summoners(SummonerId, ChampionId, Role, Lane)", $"'{summonerId}', '{championId}', '{(int)role}', '{(int)lane}'");
-                var selection = SqlHandler.Select("Summoners", "Id", $"SummonerId='{summonerId}' AND ChampionId='{championId}' AND Role='{(int)role}' AND Lane='{(int)lane}'");
+                SqlHandler.Insert("Summoners(SummonerId, ChampionId, Role, Lane, Region)", $"'{summonerId}', '{championId}', '{(int)role}', '{(int)lane}', '{(int)region}'");
+                var selection = SqlHandler.Select("Summoners", "Id", $"SummonerId='{summonerId}' AND ChampionId='{championId}' AND Role='{(int)role}' AND Lane='{(int)lane}' AND Region='{(int)region}'");
 
                 Debugging.Log("Create summoner", $"Created new summoner and added to database, id={selection[0]}");
                 return int.Parse(selection[0]);

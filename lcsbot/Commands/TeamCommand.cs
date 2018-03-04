@@ -102,7 +102,7 @@ namespace lcsbot.Commands
         }
 
         [Command("addplayer")]
-        public async Task AddPlayer(string summoner, string champion, string roleInput)
+        public async Task AddPlayer(string summoner, string champion, string roleInput, string region)
         {
             MessageHandler handler = new MessageHandler();
 
@@ -143,7 +143,10 @@ namespace lcsbot.Commands
                 {
                     champion = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(champion);
 
-                    Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(RiotSharp.Misc.Region.euw, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role, lane);
+                    RiotSharp.Misc.Region parsedRegion;
+                    Enum.TryParse(region, out parsedRegion);
+
+                    Summoner newSummoner = new Summoner(RiotAPIClass.api.GetSummonerByName(parsedRegion, summoner).Id.ToString(), GetChampionByName(champion).Id.ToString(), role, lane, parsedRegion);
 
                     var obj = GetUserByIdFromList(Context.User.Id.ToString());
                     if (obj != null) obj.AddSummonerToTeam(newSummoner);
