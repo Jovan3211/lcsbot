@@ -7,11 +7,42 @@ using Discord.WebSocket;
 
 namespace lcsbot.Services
 {
+    /// <summary>
+    /// Version 1.0 | Contains functions for reading from, inserting, deleting and generally using a MySql database.
+    /// </summary>
     public static class SqlHandler
     {
         //private static string connectionString = "datasource=localhost;port=3306;username=root;password=password;";
         private static string connectionString;
         private static MySqlConnection DatabaseConnection = new MySqlConnection(connectionString);
+
+        /// <summary>
+        /// Sets a new connection string and returns it.
+        /// </summary>
+        /// <param name="url">The database address.</param>
+        /// <param name="port">The database port.</param>
+        /// <param name="username">Login username.</param>
+        /// <param name="password">Login password.</param>
+        /// <returns>New connection string.</returns>
+        public static string SetConnectionString(string url, string port, string username, string password)
+        {
+            connectionString = $"datasource={url};port={port};username={username};password={password};";
+            DatabaseConnection = new MySqlConnection(connectionString);
+            Debugging.Log("SetConnectionString", $"New connection string set");
+            return connectionString;
+        }
+
+        /// <summary>
+        /// Returns the connection string.
+        /// </summary>
+        /// <returns>Connection string.</returns>
+        public static string GetConnectionString()
+        {
+            if (string.IsNullOrEmpty(connectionString))
+                throw new Exception("Connection string needs to be set first.");
+
+            return connectionString;
+        }
 
         /// <summary>
         /// Attempts to connect to a MySql server based on connection settings either preloaded or passed directly via SetConnectionSTring().
@@ -56,8 +87,10 @@ namespace lcsbot.Services
         /// <param name="databaseName">Selected database.</param>
         /// <param name="tableName">Selected table.</param>
         /// <returns>Returns a string list containing all field names.</returns>
-        public static List<string> GetDataBaseFields(string databaseName, string tableName)
+        public static List<string> GetDataBaseFields(string tableName, string databaseName = null)
         {
+            CheckDatabaseName(ref databaseName);
+
             DatabaseConnection.Close();
             DatabaseConnection.Open();
             MySqlCommand clmn = new MySqlCommand("SHOW FIELDS FROM " + databaseName + "." + tableName + ";", DatabaseConnection);
@@ -84,9 +117,9 @@ namespace lcsbot.Services
         /// <param name="databaseName">Selected database.</param>
         /// <param name="tableName">Selected table.</param>
         /// <returns>Returns an int containing total count of fields.</returns>
-        public static int GetDataBaseFieldCount(string databaseName, string tableName)
+        public static int GetDataBaseFieldCount(string tableName, string databaseName = null)
         {
-
+            CheckDatabaseName(ref databaseName);
 
             DatabaseConnection.Open();
             MySqlCommand clmn = new MySqlCommand("SHOW FIELDS FROM " + databaseName + "." + tableName + ";", DatabaseConnection);
@@ -114,8 +147,10 @@ namespace lcsbot.Services
         /// <param name="databaseName">Selected database.</param>
         /// <param name="tableName">Selected table.</param>
         /// <returns>Returns a string list containing all field datatypes.</returns>
-        public static List<string> GetDataBaseFieldTypes(string databaseName, string tableName)
+        public static List<string> GetDataBaseFieldTypes(string tableName, string databaseName = null)
         {
+            CheckDatabaseName(ref databaseName);
+
             DatabaseConnection.Open();
             MySqlCommand clmn = new MySqlCommand("SHOW FIELDS FROM " + databaseName + "." + tableName + ";", DatabaseConnection);
             MySqlDataReader reader;
@@ -135,36 +170,6 @@ namespace lcsbot.Services
         }
 
         /// <summary>
-        /// Returns the connection string.
-        /// </summary>
-        /// <returns>Connection string.</returns>
-        public static string GetConnectionString()
-        {
-            if (string.IsNullOrEmpty(connectionString))
-                throw new Exception("Connection string needs to be set first.");
-
-            return connectionString;
-        }
-
-        /// <summary>
-        /// Sets a new connection string and returns it.
-        /// </summary>
-        /// <param name="url">The database address.</param>
-        /// <param name="port">The database port.</param>
-        /// <param name="username">Login username.</param>
-        /// <param name="password">Login password.</param>
-        /// <returns>New connection string.</returns>
-        public static string SetConnectionString(string url, string port, string username, string password)
-        {
-            connectionString = $"datasource={url};port={port};username={username};password={password};";
-            DatabaseConnection = new MySqlConnection(connectionString);
-            Debugging.Log("SetConnectionString", $"New connection string set");
-            return connectionString;
-        }
-
-        //tom pls write description of how your function works and what the arguments are, also can you make the variables more descriptive /beg
-        //did
-        /// <summary>
         /// Standard SQL select query. Returns a list of strings containing data from input database and table.
         /// Selects based on an input selectQuery, which denominates which elements to select (such as 'id')
         /// Selects based on an input whereQuery(condition), which sets a baseline rule for selection (such as 'where id = 1')
@@ -174,10 +179,10 @@ namespace lcsbot.Services
         /// <param name="condition">The SQL WHERE query of what rows to select.</param>
         /// <param name="databaseName">Optional name for the database (disregard the null, it's set).</param>
         /// <returns>A list of selected row strings with columns seperated by a comma (,).</returns>
-        /// <example>Select("Users", "Username, Pats", "UserId = 1");</example>
+        /// <example>Select("Users", "Id, Pats", "Username = 'Michael'");</example>
         public static List<string> Select(string tableName, string selectQuery, string condition, string databaseName = null)
         {
-            databaseName = Settings.DatabaseName;
+            CheckDatabaseName(ref databaseName);
 
             MySqlDataReader reader;
             MySqlDataReader reader1;
@@ -281,7 +286,7 @@ namespace lcsbot.Services
         /// <param name="databaseName">Optional name for the database (disregard the null, it's set)(AAAAAAAAAAAAAAAAAAA t. Tom).</param>
         public static void Delete(string tableName, string condition, string databaseName = null)
         {
-            //databaseName = Settings.DatabaseName;
+            CheckDatabaseName(ref databaseName);
 
             MySqlDataReader reader;
             DatabaseConnection.Open();
@@ -308,7 +313,7 @@ namespace lcsbot.Services
         /// <param name="databaseName">Optional name for the database (disregard the null, it's set).</param>
         public static void Insert(string tableName, string values, string databaseName = null)
         {
-            databaseName = Settings.DatabaseName;
+            CheckDatabaseName(ref databaseName);
 
             MySqlDataReader reader;
             DatabaseConnection.Open();
@@ -337,7 +342,8 @@ namespace lcsbot.Services
         /// <param name="databaseName">Optional name for the database (disregard the null, it's set).</param>
         public static void Update(string tableName, string values, string where, string databaseName = null)
         {
-            //databaseName = Settings.DatabaseName;
+            CheckDatabaseName(ref databaseName);
+
             List<string> FieldNameslocal = new List<string>();
             MySqlDataReader reader;
             DatabaseConnection.Open();
@@ -387,6 +393,12 @@ namespace lcsbot.Services
         {
             Insert("User(UserId, Username)", $"('{user.Id}', '{user.Username}')");
             return Task.CompletedTask;
+        }
+
+        private static void CheckDatabaseName(ref string dbname)
+        {
+            if (dbname == null)
+                dbname = Settings.DatabaseName;
         }
 
         internal static List<string> Select()
