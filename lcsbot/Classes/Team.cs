@@ -1,4 +1,5 @@
-﻿using lcsbot.Services;
+﻿using lcsbot.Riot;
+using lcsbot.Services;
 using System;
 using System.Collections.Generic;
 
@@ -16,6 +17,34 @@ namespace lcsbot.Classes
         {
             summoners = new List<Summoner>();
             this.userId = userId;
+        }
+
+        public bool GetExistingTeamFromUser()
+        {
+            try
+            {
+                List<string> selectionSummonerIds = SqlHandler.Select("Teams", "Summoner1Id, Summoner2Id, Summoner3Id, Summoner4Id, Summoner5Id", $"UserId='{userId}'");
+
+                summoners.Clear();
+                foreach (string item in selectionSummonerIds)
+                {
+                    List<string> summonerSelection = SqlHandler.Select("Summoners", "SummonerId, ChampionId, Role, Lane", $"SummonerId='{selectionSummonerIds[0]}'");
+
+                    Role role;
+                    Enum.TryParse(summonerSelection[2], out role);
+                    Lane lane;
+                    Enum.TryParse(summonerSelection[3], out lane);
+
+                    summoners.Add(new Summoner(summonerSelection[0], summonerSelection[1], role, lane));
+                }
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debugging.Log("GetExistingTeamFromUser", $"Error getting existing team from user: {e.Message}");
+                return false;
+            }
         }
 
         public bool AddSummoner(Summoner summoner)
