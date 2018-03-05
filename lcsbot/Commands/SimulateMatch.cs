@@ -14,7 +14,7 @@ namespace lcsbot.Commands
 {
     public class SimulateMatch : ModuleBase<SocketCommandContext>
     {
-        /*RiotApi api = RiotApi.GetDevelopmentInstance(Settings.RiotAPIKey);
+        RiotApi api = RiotApi.GetDevelopmentInstance(Settings.RiotAPIKey);
         #region command
         [Command("battle")]
         public async Task battle(SocketUser user2)
@@ -53,7 +53,7 @@ namespace lcsbot.Commands
                 }
             }
         }
-        */
+        
     }
 
 }
