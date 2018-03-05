@@ -1,0 +1,11 @@
+17:37:23 Settings    Loaded configuration.json successfully
+17:37:23 SQL Server  Please enter login info
+17:37:29 SetConnecti New connection string set
+17:37:29 Database Te Connection to database is valid
+17:37:29 TODO        make it so functions that use db check if db is enabled in settings
+17:37:30 Discord     Discord.Net v1.0.2 (API v6)
+17:37:30 Gateway     Connecting
+17:37:31 Gateway     Connected
+17:37:31 Gateway     Ready
+17:37:34 Command Han Jovan sent asdf
+17:37:34 Command Han Error with command asdf: Unknown command

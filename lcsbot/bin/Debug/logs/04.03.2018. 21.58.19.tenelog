@@ -1,0 +1,11 @@
+21:58:19 Settings    Loaded configuration.json successfully
+21:58:19 SQL Server  Please enter login info
+21:58:27 SetConnecti New connection string set
+21:58:27 TestDatabas Error testing database: Authentication to host '139.59.162.138' for user 'memebigboy' using method 'mysql_native_password' failed with message: Access denied for user 'memebigboy'@'cable-188-2-111-48.dynamic.sbb.rs' (using password: YES)
+21:58:27 TestDatabas Some features which use a mysql database won't be available
+21:58:27 TODO        make it so functions that use db check if db is enabled in settings
+21:58:27 Discord     Discord.Net v1.0.2 (API v6)
+21:58:28 Gateway     Connecting
+21:58:28 Gateway     Connected
+21:58:29 Gateway     Ready
+21:58:33 Gateway     Unknown Dispatch (PRESENCES_REPLACE)
