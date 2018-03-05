@@ -53,11 +53,11 @@ namespace lcsbot.Commands
 
             List<string> commandTitles = new List<string>
             {
-                "team view", "team save", "team addplayer 'Summoner name/id' 'champ name/id' `role`", "team removeplayer 'Summoner name/id'", "team champ 'Summoner name/ID on your team' 'champion name/ID'"
+                "team view", "team save", "team addplayer 'Summoner name/id' 'champ name/id' `role` `region`", "team removeplayer `ask tene about this`"
             };
             List<string> commandDescriptions = new List<string>
             {
-                "Displays your current team.", "Saves your team settings.", "Adds a summoner with a champion to your team.", "Removes a summoner and his champ from your team.", "Changes champion of an existing summoner on your team."
+                "Displays your current team.", "Saves your team settings.", "Adds a summoner with a champion to your team.", "Removes a summoner and his champ from your team."
             };
 
             string imageUrl = ImageHandler.GetImageUrl(helpImageName);
