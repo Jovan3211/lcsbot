@@ -1,0 +1,53 @@
+23:57:53 Settings    Loaded configuration.json successfully
+23:57:53 SQL Server  Please enter login info
+23:58:03 SetConnecti New connection string set
+23:58:03 Database Te Connection to database is valid
+23:58:03 TODO        make it so functions that use db check if db is enabled in settings
+23:58:03 Discord     Discord.Net v1.0.2 (API v6)
+23:58:04 Gateway     Connecting
+23:58:04 Gateway     Connected
+23:58:05 Gateway     Ready
+23:58:15 Gateway     A MessageReceived handler is blocking the gateway task.
+23:58:15 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'Users.lcsbotDatabase' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at lcsbot.Services.SqlHandler.GetDataBaseFields(String tableName, String databaseName) in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Services\SqlHandler.cs:line 101
+   at lcsbot.Services.SqlHandler.Select(String tableName, String selectQuery, String condition, String databaseName) in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Services\SqlHandler.cs:line 200
+   at lcsbot.Functions.CheckUserInDatabase.Check(String userId) in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Functions\CheckUserInDatabase.cs:line 15
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Program.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+23:59:57 Gateway     A MessageReceived handler is blocking the gateway task.
+23:59:57 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'Users.lcsbotDatabase' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at lcsbot.Services.SqlHandler.GetDataBaseFields(String tableName, String databaseName)
+   at lcsbot.Services.SqlHandler.Select(String tableName, String selectQuery, String condition, String databaseName)
+   at lcsbot.Functions.CheckUserInDatabase.Check(String userId)
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()

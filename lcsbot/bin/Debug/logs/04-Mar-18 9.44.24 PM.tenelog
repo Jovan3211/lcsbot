@@ -1,0 +1,10 @@
+21:44:24 Settings    Loaded configuration.json successfully
+21:44:24 SQL Server  Please enter login info
+21:44:30 SetConnecti New connection string set
+21:44:31 Database Te Connection to database is valid
+21:44:31 TODO        make it so functions that use db check if db is enabled in settings
+21:44:31 Command     Class lcsbot.Commands.SimulateMatch is not public and cannot be loaded. To suppress this message, mark the class with DontAutoLoadAttribute.
+21:44:31 Discord     Discord.Net v1.0.2 (API v6)
+21:44:33 Gateway     Connecting
+21:44:34 Gateway     Connected
+21:44:34 Gateway     Ready

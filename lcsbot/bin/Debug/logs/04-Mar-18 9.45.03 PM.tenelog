@@ -1,0 +1,9 @@
+21:45:03 Settings    Loaded configuration.json successfully
+21:45:03 SQL Server  Please enter login info
+21:45:16 SetConnecti New connection string set
+21:45:17 Database Te Connection to database is valid
+21:45:17 TODO        make it so functions that use db check if db is enabled in settings
+21:45:17 Discord     Discord.Net v1.0.2 (API v6)
+21:45:18 Gateway     Connecting
+21:45:18 Gateway     Connected
+21:45:19 Gateway     Ready
