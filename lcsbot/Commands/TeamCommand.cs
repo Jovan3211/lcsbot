@@ -18,6 +18,7 @@ namespace lcsbot.Commands
     public class TeamCommand : ModuleBase<SocketCommandContext>
     {
         public static List<User> userList = new List<User>();
+        private string[] haventStartedMessage = { "Whoops, looks like you haven't started team building.", "Type `team start` to begin and `help team` for assistance." };
 
         [Command("")]
         public async Task HelpCommand()
@@ -65,16 +66,25 @@ namespace lcsbot.Commands
         [Command("view")]
         public async Task View()
         {
-            string savedMessage = "";
-            var user = GetUserByIdFromList(Context.User.Id.ToString());
-
-            if (user.Saved)
-                savedMessage = "Team is saved.";
-            else
-                savedMessage = "Team is not saved, use `team save` when done.";
-
             MessageHandler messageHandler = new MessageHandler();
-            EmbedBuilder message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
+            EmbedBuilder message;
+
+            if (CheckStarted(Context.User.Id.ToString()))
+            {
+                string savedMessage = "";
+                var user = GetUserByIdFromList(Context.User.Id.ToString());
+
+                if (user.Saved)
+                    savedMessage = "Team is saved.";
+                else
+                    savedMessage = "Team is not saved, use `team save` when done.";
+
+                message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
+            }
+            else
+            {
+                message = messageHandler.BuildEmbed(haventStartedMessage[0], haventStartedMessage[1], Palette.Pink);
+            }
 
             await ReplyAsync("", false, message.Build());
         }
@@ -82,21 +92,30 @@ namespace lcsbot.Commands
         [Command("save")]
         public async Task Save()
         {
-            string savedMessage = "Team is saved successfully, nothing to worry about I'll keep it safe.";
-            var user = GetUserByIdFromList(Context.User.Id.ToString());
+            MessageHandler messageHandler = new MessageHandler();
+            EmbedBuilder message;
 
-            if (user.CheckTeamReady())
+            if (CheckStarted(Context.User.Id.ToString()))
             {
-                if (user.Saved)
-                    savedMessage = "Team is already saved.";
+                string savedMessage = "Team is saved successfully, nothing to worry about I'll keep it safe.";
+                var user = GetUserByIdFromList(Context.User.Id.ToString());
+
+                if (user.CheckTeamReady())
+                {
+                    if (user.Saved)
+                        savedMessage = "Team is already saved.";
+                    else
+                        user.SaveTeam();
+                }
                 else
-                    user.SaveTeam();
+                    savedMessage = "Hmm, looks like your loadout isn't quite ready yet. You need 5 players in your team.";
+
+                message = messageHandler.BuildEmbed("Save team", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
             }
             else
-                savedMessage = "Hmm, looks like your loadout isn't quite ready yet. You need 5 players in your team.";
-
-            MessageHandler messageHandler = new MessageHandler();
-            EmbedBuilder message = messageHandler.BuildEmbed("Save team", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
+            {
+                message = messageHandler.BuildEmbed(haventStartedMessage[0], haventStartedMessage[1], Palette.Pink);
+            }
 
             await ReplyAsync("", false, message.Build());
         }
@@ -108,6 +127,12 @@ namespace lcsbot.Commands
 
             if (CheckStarted(Context.User.Id.ToString()))
             {
+                if (GetUserByIdFromList(Context.User.Id.ToString()).Team.Summoners.Count == 5)
+                {
+                    await ReplyAsync("", false, handler.BuildEmbed("Looks like your team is full!", "You can't have more than 5 summoners in your team. To remove one do `removesummoner idk need to talk to tene`"));
+                    return;
+                }
+
                 bool correctLaneRole = true;
                 Lane lane = new Lane();
                 Role role = new Role();
@@ -155,7 +180,16 @@ namespace lcsbot.Commands
                 }
             }
             else
-                await ReplyAsync("", false, handler.BuildEmbed("Start team creating and editing with 'team start'.", "", Palette.Pink).Build());
+            {
+                await ReplyAsync("", false, handler.BuildEmbed(haventStartedMessage[0], haventStartedMessage[1], Palette.Pink).Build());
+            }
+        }
+
+        [Command("removeplayer")]
+        public async Task RemovePlayer()
+        {
+            MessageHandler messageHandler = new MessageHandler();
+            await ReplyAsync("", false, messageHandler.BuildEmbed("Looks like this isn't quite ready yet. Give me a bit more time, no need to rush ;)", "Not yet implemented").Build());
         }
 
         private User GetUserByIdFromList(string userId) => userList.FirstOrDefault(x => x.UserId == userId);
