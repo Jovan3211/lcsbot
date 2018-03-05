@@ -197,8 +197,8 @@ namespace lcsbot.Services
             List<string> returno = new List<string>();
             List<string> tarplist = new List<string>();
 
-            FieldNameslocal = GetDataBaseFields(databaseName, tableName);
-            numberOfFieldslocal = GetDataBaseFieldCount(databaseName, tableName);
+            FieldNameslocal = GetDataBaseFields(tableName, databaseName);
+            numberOfFieldslocal = GetDataBaseFieldCount(tableName, databaseName);
 
             DatabaseConnection.Close();
             DatabaseConnection.Open();
@@ -352,8 +352,8 @@ namespace lcsbot.Services
             string set = "";
             int f = 1;
 
-            FieldNameslocal = GetDataBaseFields(databaseName, tableName);
-            numberOfFieldslocal = GetDataBaseFieldCount(databaseName, tableName);
+            FieldNameslocal = GetDataBaseFields(tableName, databaseName);
+            numberOfFieldslocal = GetDataBaseFieldCount(tableName, databaseName);
 
             string[] zodmas = new string[numberOfFieldslocal-1];
             char[] skirt = new char[2] {',', ' ' };

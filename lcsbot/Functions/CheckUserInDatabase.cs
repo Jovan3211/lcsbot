@@ -12,7 +12,7 @@ namespace lcsbot.Functions
         /// <returns>If user is in the database or not.</returns>
         public static bool Check(string userId)
         {
-            List<string> selection = SqlHandler.Select("Users", "UserId", $"UserId = {userId}");
+            List<string> selection = SqlHandler.Select("Users", "UserId", $"UserId = '{userId}'");
 
             if (selection.Count < 1)
                 return false;

@@ -79,6 +79,7 @@ namespace lcsbot
             {
                 bool AddingToDB = false;
                 var context = new SocketCommandContext(Settings._client, message);
+                Debugging.Log("Command Handler, DM", $"{context.User.Username} sent {message}");
 
                 if (!CheckUserInDatabase.Check(context.User.Id.ToString())) // checks if user is in database, if not, add
                 {
@@ -91,8 +92,6 @@ namespace lcsbot
                     else
                         await arg.Channel.SendMessageAsync("", false, handler.BuildEmbed("Hmm... Something went wrong!", "I couldn't add you to my database. Go ahead and try again!"));
                 }
-
-                Debugging.Log("Command Handler, DM", $"{context.User.Username} sent {message}");
 
                 var result = await Settings._commands.ExecuteAsync(context, argPos, Settings._services);
                 if (!result.IsSuccess && result.Error != CommandError.ObjectNotFound || result.Error != CommandError.Exception)
