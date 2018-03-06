@@ -79,7 +79,13 @@ namespace lcsbot.Commands
                 else
                     savedMessage = "Team is not saved, use `team save` when done.";
 
-                message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
+                var summonersInUserTeam = GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString()));
+                var namesForChampionsInUserTeam = GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString()));
+
+                if (summonersInUserTeam.Count > 1)
+                    message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, summonersInUserTeam, namesForChampionsInUserTeam);
+                else
+                    message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, new List<string>{ "No one yet" }, new List<string> { "See `help` to see how to add" });
             }
             else
             {

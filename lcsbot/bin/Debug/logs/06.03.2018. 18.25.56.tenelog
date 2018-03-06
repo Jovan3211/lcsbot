@@ -1,0 +1,32 @@
+18:25:56 Settings    Loaded configuration.json successfully
+18:25:56 SQL Server  Please enter login info
+18:26:00 SetConnecti New connection string set
+18:26:01 Database Te Connection to database is valid
+18:26:01 TODO        make it so functions that use db check if db is enabled in settings
+18:26:01 Discord     Discord.Net v1.0.2 (API v6)
+18:26:02 Gateway     Connecting
+18:26:02 Gateway     Connected
+18:26:03 Gateway     Ready
+18:26:16 Command Han Jovan called !battle <@254376091089764352>
+18:26:20 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+18:26:20 CheckHttpRe Remote server returned 404, not found
+18:26:20 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:26:20 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:26:20 Gateway     A MessageReceived handler is blocking the gateway task.
+18:26:20 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+18:26:31 Command Han ititan called !battle <@140197514958602240>
+18:26:31 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+18:26:33 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+18:26:33 CheckHttpRe Remote server returned 404, not found
+18:26:33 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:26:33 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
