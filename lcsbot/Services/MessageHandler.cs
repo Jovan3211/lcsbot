@@ -8,6 +8,23 @@ namespace lcsbot.Services
     public class MessageHandler : ModuleBase<SocketCommandContext>
     {
         /// <summary>
+        /// Builds a ready made embed for debug sending a premade message to discord.
+        /// </summary>
+        /// <returns>Embed to be used in async calls</returns>
+        public EmbedBuilder GetDebugEmbed()
+        {
+            Color color = Palette.Pink;
+
+            EmbedBuilder message = new EmbedBuilder()
+                .WithTitle("Holy fuck")
+                .WithDescription("Whatever you were testing worked, finally.")
+                .WithColor(color)
+                .WithThumbnailUrl(ImageHandler.GetImageUrl("depressedfox"));
+
+            return message;
+        }
+
+        /// <summary>
         /// Builds an embed to be used in sending messages to discord.
         /// </summary>
         /// <param name="title">Message title.</param>

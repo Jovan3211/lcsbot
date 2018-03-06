@@ -14,7 +14,7 @@ namespace lcsbot.Commands
 {
     public class SimulateMatch : ModuleBase<SocketCommandContext>
     {
-        /*RiotApi api = RiotApi.GetDevelopmentInstance(Settings.RiotAPIKey);
+        RiotApi api = RiotApi.GetDevelopmentInstance(Settings.RiotAPIKey);
         #region command
         [Command("battle")]
         public async Task battle(SocketUser user2)
@@ -26,10 +26,10 @@ namespace lcsbot.Commands
             team1.GetExistingTeamFromUser();
             team2.GetExistingTeamFromUser();
 
-
+            MessageHandler handler = new MessageHandler();
+            await ReplyAsync("", false, handler.GetDebugEmbed().Build());
         }
         #endregion
-        
 
         public async Task CompareTeamsCompoundKDA(Team team1, Team team2)
         {
@@ -53,7 +53,7 @@ namespace lcsbot.Commands
                 }
             }
         }
-        */
+        
     }
 
 }

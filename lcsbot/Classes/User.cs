@@ -14,7 +14,7 @@ namespace lcsbot.Classes
         public string UserId { get => userId; set => userId = value; }
         public string Username { get => username; set => username = value; }
         public Team Team { get => team; }
-        public bool Saved { get; set; }
+        public bool Saved { get => saved; set => saved = value; }
 
         public User(string userId, string username)
         {

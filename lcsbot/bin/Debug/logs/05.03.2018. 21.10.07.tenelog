@@ -1,0 +1,31 @@
+21:10:07 Settings    Loaded configuration.json successfully
+21:10:08 SQL Server  Please enter login info
+21:10:14 SetConnecti New connection string set
+21:10:15 Database Te Connection to database is valid
+21:10:15 TODO        make it so functions that use db check if db is enabled in settings
+21:10:15 Discord     Discord.Net v1.0.2 (API v6)
+21:10:16 Gateway     Connecting
+21:10:16 Gateway     Connected
+21:10:17 Gateway     Ready
+21:10:24 Command Han Jovan sent help team
+21:10:25 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+21:10:25 CheckHttpRe 'http://139.59.162.138/lcsbot/confusedlulu.jpg' is reachable
+21:10:35 Command Han Jovan sent team addplayer tenebi ahri mid euw
+21:10:41 Command Han Jovan sent team start
+21:10:45 Command Han Jovan sent team addplayer tenebi ahri mid euw
+21:10:46 Command     Discord.Commands.CommandException: Error occurred executing "addplayer" for Jovan#2244 in @Jovan#2244. ---> RiotSharp.RiotSharpException: 403, Forbidden
+   at RiotSharp.Http.RequesterBase.HandleRequestFailure(HttpStatusCode statusCode)
+   at RiotSharp.Http.RequesterBase.Get(HttpRequestMessage request)
+   at RiotSharp.Http.RateLimitedRequester.CreateGetRequest(String relativeUrl, Region region, List`1 addedArguments, Boolean useHttps)
+   at RiotSharp.RiotApi.GetSummonerByName(Region region, String summonerName)
+   at lcsbot.Commands.TeamCommand.<AddPlayer>d__7.MoveNext() in D:\Gits\lcsbot\lcsbot\Commands\TeamCommand.cs:line 174
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+21:10:46 Command Han Error with command team addplayer tenebi ahri mid euw: 403, Forbidden

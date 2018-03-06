@@ -37,7 +37,7 @@ namespace lcsbot.Classes
                 var selection = SqlHandler.Select("Summoners", "Id", $"SummonerId='{summonerId}' AND ChampionId='{championId}' AND Role='{(int)role}' AND Lane='{(int)lane}' AND Region='{(int)region}'");
 
                 Debugging.Log("Create summoner", $"Created new summoner and added to database, id={selection[0]}");
-                return int.Parse(selection[0]);
+                return int.Parse(selection[selection.Count-1]);
             }
             catch (Exception e)
             {

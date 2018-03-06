@@ -2,6 +2,7 @@
 using lcsbot.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace lcsbot.Classes
 {
@@ -23,12 +24,15 @@ namespace lcsbot.Classes
         {
             try
             {
-                List<string> selectionSummonerIds = SqlHandler.Select("Teams", "Summoner1Id, Summoner2Id, Summoner3Id, Summoner4Id, Summoner5Id", $"UserId='{userId}'");
+                List<string> selectionSummonerIds = SqlHandler.Select("Teams", "Summoner1Id,Summoner2Id,Summoner3Id,Summoner4Id,Summoner5Id", $"UserId='{userId}'");
+                selectionSummonerIds = selectionSummonerIds[0].Split(',').ToList();
 
                 summoners.Clear();
-                foreach (string item in selectionSummonerIds)
+                foreach (string summonerId in selectionSummonerIds)
                 {
-                    List<string> summonerSelection = SqlHandler.Select("Summoners", "SummonerId, ChampionId, Role, Lane, Region", $"SummonerId='{selectionSummonerIds[0]}'");
+                    List<string> summonerSelection = SqlHandler.Select("Summoners", "SummonerId,ChampionId,Role,Lane,Region", $"Id='{summonerId}'");
+                    summonerSelection = summonerSelection[0].Split(',').ToList();
+
 
                     Role role;
                     Enum.TryParse(summonerSelection[2], out role);
@@ -44,7 +48,7 @@ namespace lcsbot.Classes
             }
             catch (Exception e)
             {
-                Debugging.Log("GetExistingTeamFromUser", $"Error getting existing team from user: {e.Message}");
+                Debugging.Log("GetExistingTeamFromUser", $"Error getting existing team from user: {e.Message}", Discord.LogSeverity.Error);
                 return false;
             }
         }

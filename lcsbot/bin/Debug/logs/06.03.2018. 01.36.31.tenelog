@@ -1,0 +1,70 @@
+01:36:31 Settings    Loaded configuration.json successfully
+01:36:31 SQL Server  Please enter login info
+01:36:44 SetConnecti New connection string set
+01:36:45 Database Te Connection to database is valid
+01:36:45 TODO        make it so functions that use db check if db is enabled in settings
+01:36:45 Discord     Discord.Net v1.0.2 (API v6)
+01:36:45 Gateway     Connecting
+01:36:46 Gateway     Connected
+01:36:46 Gateway     Ready
+01:36:52 Command Han Jovan sent team start
+01:36:56 Command Han Jovan sent team addplayer tenebi ahri mid euw
+01:36:58 Command Han Jovan sent team addplayer tenebi ahri mid euw
+01:36:58 Command Han Jovan sent team addplayer tenebi ahri mid euw
+01:36:59 Command Han Jovan sent team addplayer tenebi ahri mid euw
+01:37:00 Command Han Jovan sent team addplayer tenebi ahri mid euw
+01:37:00 Rest        Preemptive Rate limit triggered: channels/418584773884379136/messages
+01:37:03 Gateway     A MessageReceived handler is blocking the gateway task.
+01:37:04 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+01:37:04 Command Han Jovan sent team save
+01:37:04 SQL Insert  Inserted records into database
+01:37:05 Create summ Created new summoner and added to database, id=26
+01:37:05 SQL Insert  Inserted records into database
+01:37:05 Create summ Created new summoner and added to database, id=26
+01:37:05 SQL Insert  Inserted records into database
+01:37:05 Create summ Created new summoner and added to database, id=26
+01:37:05 SQL Insert  Inserted records into database
+01:37:06 Create summ Created new summoner and added to database, id=26
+01:37:06 SQL Insert  Inserted records into database
+01:37:06 Create summ Created new summoner and added to database, id=26
+01:37:06 SQL Insert  Inserted records into database
+01:37:06 Create team Created team for user: 140197514958602240 with summoners: 43, 44, 45, 46, 47
+01:37:07 Gateway     A MessageReceived handler is blocking the gateway task.
+01:37:07 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+01:37:11 Command Han Jovan sent team end
+01:37:49 Command Han Jovan called !battle <@254376091089764352>
+01:37:57 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+01:37:57 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+01:37:57 Gateway     A MessageReceived handler is blocking the gateway task.
+01:37:57 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+01:38:54 Command Han Jovan called !battle <@254376091089764352>

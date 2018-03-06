@@ -1,0 +1,10 @@
+01:40:49 Settings    Loaded configuration.json successfully
+01:40:49 SQL Server  Please enter login info
+01:40:55 SetConnecti New connection string set
+01:40:56 Database Te Connection to database is valid
+01:40:56 TODO        make it so functions that use db check if db is enabled in settings
+01:40:56 Discord     Discord.Net v1.0.2 (API v6)
+01:40:56 Gateway     Connecting
+01:40:57 Gateway     Connected
+01:40:58 Gateway     Ready
+01:41:01 Command Han Jovan called !battle <@254376091089764352>

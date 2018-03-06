@@ -1,0 +1,25 @@
+21:57:01 Settings    Loaded configuration.json successfully
+21:57:01 SQL Server  Please enter login info
+21:57:10 SetConnecti New connection string set
+21:57:11 Database Te Connection to database is valid
+21:57:11 TODO        make it so functions that use db check if db is enabled in settings
+21:57:11 Discord     Discord.Net v1.0.2 (API v6)
+21:57:11 Gateway     Connecting
+21:57:12 Gateway     Connected
+21:57:13 Gateway     Ready
+21:57:15 Command Han Jovan called !battle <@254376091089764352>
+21:57:15 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+21:57:16 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:00:31 Command Han Jovan called !battle <@254376091089764352>
+22:00:31 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:00:31 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:00:38 Command Han Jovan sent testing
+22:00:38 Command Han Error with command testing: Unknown command
+22:00:43 Command Han Jovan sent team start
+22:00:45 Command Han Jovan sent team end
+22:00:50 Command Han Jovan called !battle <@254376091089764352>
+22:00:51 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:00:51 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:04:38 Command Han Jovan called !battle <@254376091089764352>
+22:04:39 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+22:04:41 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
