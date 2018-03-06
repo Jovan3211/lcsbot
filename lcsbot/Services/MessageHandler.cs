@@ -16,10 +16,10 @@ namespace lcsbot.Services
             Color color = Palette.Pink;
 
             EmbedBuilder message = new EmbedBuilder()
-                .WithTitle("Holy fuck")
-                .WithDescription("Whatever you were testing worked, finally.")
+                .WithTitle("Horry Shiieet")
+                .WithDescription("OH MAI GOD! Whatever you were testing worked, finally.")
                 .WithColor(color)
-                .WithThumbnailUrl(ImageHandler.GetImageUrl("depressedfox"));
+                .WithThumbnailUrl(ImageHandler.GetImageUrl("joseph"));
 
             return message;
         }
