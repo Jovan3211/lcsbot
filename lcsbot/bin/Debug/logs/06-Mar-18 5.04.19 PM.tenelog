@@ -1,0 +1,29 @@
+17:04:19 Settings    Loaded configuration.json successfully
+17:04:19 SQL Server  Please enter login info
+17:04:24 SetConnecti New connection string set
+17:04:26 Database Te Connection to database is valid
+17:04:26 TODO        make it so functions that use db check if db is enabled in settings
+17:04:28 Discord     Discord.Net v1.0.2 (API v6)
+17:04:30 Gateway     Connecting
+17:04:31 Gateway     Connected
+17:04:31 Gateway     Ready
+17:07:32 Command Han tenebi sent team view
+17:07:36 Command Han tenebi sent team start
+17:07:37 Command Han tenebi sent team view
+17:07:38 Command     Discord.Commands.CommandException: Error occurred executing "view" for tenebi#4551 in @tenebi#4551. ---> System.Exception: fieldTitles list cannot be empty.
+   at lcsbot.Services.MessageHandler.BuildEmbed(String title, String description, Color color, List`1 fieldTitles, List`1 fieldValue, String thumbnailUrl) in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Services\MessageHandler.cs:line 91
+   at lcsbot.Commands.TeamCommand.<View>d__5.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 82
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:07:38 Command Han Error with command team view: fieldTitles list cannot be empty
+17:07:43 Command Han tenebi sent team end
+17:08:28 Command Han Jovan sent team view
+17:08:31 SQL Insert  Error inserting records: Table 'lcsbotDatabase.User' doesn't exist
+17:13:07 SQL Insert  Error inserting records: Table 'lcsbotDatabase.User' doesn't exist
