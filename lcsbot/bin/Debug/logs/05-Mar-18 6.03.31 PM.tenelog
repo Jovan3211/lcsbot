@@ -1,0 +1,129 @@
+18:03:31 Settings    Loaded configuration.json successfully
+18:03:31 SQL Server  Please enter login info
+18:04:22 SetConnecti New connection string set
+18:04:23 Database Te Connection to database is valid
+18:04:23 TODO        make it so functions that use db check if db is enabled in settings
+18:04:23 Discord     Discord.Net v1.0.2 (API v6)
+18:04:23 Gateway     Connecting
+18:04:24 Gateway     Connected
+18:04:24 Gateway     Ready
+18:04:30 Command Han tenebi sent team start
+18:04:36 Command Han tenebi sent team addplayer tenebi ahri mid euw
+18:04:46 Command Han tenebi sent team addplayer tenebi ahri top euw
+18:04:52 Command Han tenebi sent team addplayer tenebi ahri top euw
+18:05:01 Command Han tenebi sent team addplayer tenebi ahri jungle euw
+18:05:07 Command Han tenebi sent team addplayer tenebi ahri support euw
+18:05:14 Command Han tenebi sent team addplayer tenebi ahri bot euw
+18:05:24 Command Han tenebi sent team addplayer tenebi adc euw
+18:05:24 Command Han Error with command team addplayer tenebi adc euw: The input text has too many parameters
+18:05:33 Command Han tenebi sent team addplayer tenebi ahri adc euw
+18:05:48 Command Han tenebi sent team addplayer tenebi ahri mid euw
+18:05:51 Command Han tenebi sent team end
+18:05:55 Command Han tenebi sent team view
+18:05:55 Command     Discord.Commands.CommandException: Error occurred executing "view" for tenebi#4551 in @tenebi#4551. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 71
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+18:05:55 Command Han Error with command team view: Object reference not set to an instance of an object
+18:06:06 Command Han tenebi sent team save
+18:06:06 Command     Discord.Commands.CommandException: Error occurred executing "save" for tenebi#4551 in @tenebi#4551. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Commands.TeamCommand.<Save>d__5.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 88
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+18:06:06 Command Han Error with command team save: Object reference not set to an instance of an object
+18:06:10 Command Han tenebi sent team start
+18:06:14 Command Han tenebi sent team addplayer ahri mid euw
+18:06:14 Command Han Error with command team addplayer ahri mid euw: The input text has too many parameters
+18:06:29 Command Han tenebi sent team addplayer tenebi ahri mid euw
+18:06:32 Command Han tenebi sent team addplayer tenebi ahri top euw
+18:06:35 Command Han tenebi sent team addplayer tenebi ahri jungle euw
+18:07:10 Command Han tenebi sent team addplayer tenebi ahri support euw
+18:07:19 Command Han tenebi sent team addplayer tenebi ahri adc euw
+18:07:21 Command Han tenebi sent team view
+18:07:29 Command Han tenebi sent team save
+18:07:29 SQL Insert  Inserted records into database
+18:07:29 Create summ Created new summoner and added to database, id=1
+18:07:29 SQL Insert  Inserted records into database
+18:07:29 Create summ Created new summoner and added to database, id=2
+18:07:29 SQL Insert  Inserted records into database
+18:07:29 Create summ Created new summoner and added to database, id=3
+18:07:29 SQL Insert  Inserted records into database
+18:07:29 Create summ Created new summoner and added to database, id=4
+18:07:29 SQL Insert  Inserted records into database
+18:07:30 Create summ Created new summoner and added to database, id=5
+18:07:30 SQL Insert  Inserted records into database
+18:07:30 Create team Created team for user: 181108473759662081 with summoners: 1, 2, 3, 4, 5
+18:08:53 Command Han tenebi sent team view
+18:09:31 Command Han tenebi sent team end
+18:09:33 Command Han tenebi sent team view
+18:09:33 Command     Discord.Commands.CommandException: Error occurred executing "view" for tenebi#4551 in @tenebi#4551. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 71
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+18:09:33 Command Han Error with command team view: Object reference not set to an instance of an object
+18:09:56 Command Han tenebi called !battle <@140197514958602240>
+18:09:56 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+18:10:02 Command Han Jovan called !battle <@181108473759662081>
+18:10:02 GetExisting Error getting existing team from user: Could not find specified column in results:  Summoner2Id
+17:50:01 Command Han Jovan sent team save
+17:50:01 Command     Discord.Commands.CommandException: Error occurred executing "save" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Commands.TeamCommand.<Save>d__5.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 88
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:50:01 Command Han Error with command team save: Object reference not set to an instance of an object
+17:50:37 Command Han Jovan sent team removeplayer
+17:50:37 Command Han Error with command team removeplayer: The input text has too many parameters
+17:55:04 Command Han Jovan sent team vie
+17:55:04 Command Han Error with command team vie: The input text has too many parameters
+17:55:23 Command Han Jovan sent team vieww
+17:55:23 Command Han Error with command team vieww: The input text has too many parameters
+17:55:25 Command Han Jovan sent team view
+17:55:26 Command     Discord.Commands.CommandException: Error occurred executing "view" for Jovan#2244 in @Jovan#2244. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Commands.TeamCommand.<View>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Commands\TeamCommand.cs:line 71
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.ModuleClassBuilder.<>c__DisplayClass6_1.<<BuildCommand>g__ExecuteCallback1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.Commands.CommandInfo.<ExecuteAsyncInternal>d__41.MoveNext()
+   --- End of inner exception stack trace ---
+17:55:26 Command Han Error with command team view: Object reference not set to an instance of an object
+17:55:36 Command Han Jovan sent team removeplayer
+17:55:36 Command Han Error with command team removeplayer: The input text has too many parameters
+17:56:53 Command Han Jovan sent test
+17:57:03 Command Han Jovan sent team removeplayer
+17:57:03 Command Han Error with command team removeplayer: The input text has too many parameters
+17:57:22 Command Han Jovan sent team removeplayer
+17:57:22 Command Han Error with command team removeplayer: The input text has too many parameters
+17:58:41 Command Han Jovan sent team start
+17:58:45 Command Han Jovan sent team end
