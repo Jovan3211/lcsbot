@@ -1,0 +1,36 @@
+18:12:50 Settings    Loaded configuration.json successfully
+18:12:50 SQL Server  Please enter login info
+18:14:23 SetConnecti New connection string set
+18:14:23 Database Te Connection to database is valid
+18:14:23 TODO        make it so functions that use db check if db is enabled in settings
+18:14:23 Discord     Discord.Net v1.0.2 (API v6)
+18:14:24 Gateway     Connecting
+18:14:24 Gateway     Connected
+18:14:25 Gateway     Ready
+18:14:43 Command Han tenebi called !battle
+18:14:43 Command Han Error with command !battle: The input text has too few parameters
+18:14:48 Command Han tenebi called !battle <@140197514958602240>
+18:14:49 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+18:14:49 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+18:14:49 CheckHttpRe Remote server returned 404, not found
+18:14:49 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:14:50 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:19:33 Command Han tenebi sent team start
+18:19:33 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+18:19:33 CheckHttpRe 'http://139.59.162.138/lcsbot/ahriwave.jpg' is reachable
+18:19:34 SQL Insert  Inserted records into database
+18:19:34 Add user to Added tenebi to users
+18:21:03 Command Han tenebi sent team addplayer tenebi ahri mid euw
+18:21:09 Command Han tenebi sent team addplayer tenebi ahri top euw
+18:21:13 Command Han tenebi sent team addplayer tenebi ahri jungle euw
+18:21:23 Command Han tenebi sent team addplayer tenebi ahri support euw
+18:21:28 Command Han tenebi sent team addplayer tenebi ahri adc euw
+18:21:37 Command Han tenebi sent team view
+18:21:39 Command Han tenebi sent team end
+18:21:41 Command Han tenebi sent team view
+18:21:55 Command Han tenebi called !battle <@254376091089764352>
+18:21:55 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+18:21:56 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+18:21:56 CheckHttpRe Remote server returned 404, not found
+18:21:56 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+18:21:56 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
