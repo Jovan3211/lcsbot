@@ -89,7 +89,27 @@ namespace lcsbot.Commands
             }
             else
             {
-                message = messageHandler.BuildEmbed(haventStartedMessage[0], haventStartedMessage[1], Palette.Pink);
+                try
+                {
+                    string userid = Context.User.Id.ToString();
+
+                    User user = new User(userid, Context.User.Username);
+
+                    Team team = new Team(userid);
+                    team.GetExistingTeamFromUser();
+
+                    user.SetTeam(team);
+
+                    var summonersInUserTeam = GetNamesForSummonersInUserTeam(user);
+                    var namesForChampionsInUserTeam = GetNamesForChampionsInUserTeam(user);
+
+                    message = messageHandler.BuildEmbed("Your current team setup: ", "This is your primary team", Palette.Pink, summonersInUserTeam, namesForChampionsInUserTeam);
+                }
+                catch (Exception e)
+                {
+                    message = messageHandler.BuildEmbed("Whoops! There's been an error getting your team. Make sure you have one!", $"A message for my makers: {e.Message}", Palette.Pink);
+                    Debugging.Log("View command CHECKSTARTED ELSE", $"Error trying to get existingg team from user: {e.Message}", LogSeverity.Error);
+                }
             }
 
             await ReplyAsync("", false, message.Build());

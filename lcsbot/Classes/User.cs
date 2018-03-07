@@ -32,6 +32,8 @@ namespace lcsbot.Classes
 
         public List<Summoner> ReturnSummonersInTeam() => team.Summoners;
 
+        public void SetTeam(Team team) => this.team = team;
+
         public bool SaveTeam()
         {
             if (team.AddToDatabase())

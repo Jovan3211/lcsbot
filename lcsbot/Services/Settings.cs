@@ -126,18 +126,38 @@ namespace lcsbot.Services
                 return false;
             }
 
-            Debugging.Log("SQL Server Setup", "Please enter login info");
-            string port = Debugging.Read("Port");
-            string username = Debugging.Read("Username");
-            string password = Debugging.Read("Password");
-            Console.Clear();
+            while (true)
+            {
+                Debugging.Log("SQL Server Setup", "Please enter login info");
 
-            SqlHandler.SetConnectionString(sqlServerUrl, port, username, password);
+                string port;
+                while (true)
+                {
+                    port = Debugging.Read("Port");
+                    if (int.TryParse(port, out int n))
+                        break;
+                    else
+                        Debugging.Log("SQL Server Setup", "Port must be numeric", LogSeverity.Error);
+                }
 
-            if (!SqlHandler.TestDatabase())
-                return false;
+                string username = Debugging.Read("Username");
+                string password = Debugging.Read("Password");
+                Console.Clear();
 
-            return true;
+                SqlHandler.SetConnectionString(sqlServerUrl, port, username, password);
+
+                if (SqlHandler.TestDatabase())
+                    return true;
+                else
+                {
+                    if (Debugging.Read("Credentials incorrect or database unreachable, retry? (y/n)").ToLower() != "y")
+                        break;
+
+                }
+            }
+
+            Debugging.Log("TestDatabase", $"Some features which use a mysql database won't be available", Discord.LogSeverity.Warning);
+            return false;
         }
     }
 }
