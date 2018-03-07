@@ -1,0 +1,38 @@
+01:26:07 Settings    Loaded configuration.json successfully
+01:26:07 SQL Server  Please enter login info
+01:26:13 SetConnecti New connection string set
+01:26:14 Database Te Connection to database is valid
+01:26:14 TODO        make it so functions that use db check if db is enabled in settings
+01:26:14 Discord     Discord.Net v1.0.2 (API v6)
+01:26:14 Gateway     Connecting
+01:26:15 Gateway     Connected
+01:26:15 Gateway     Ready
+01:26:19 Command Han Jovan sent team view
+01:26:21 GetNamesFor Error getting summoner and/or adding to list: 403, Forbidden
+01:26:22 GetNamesFor Error getting summoner and/or adding to list: 403, Forbidden
+01:26:22 GetNamesFor Error getting summoner and/or adding to list: 403, Forbidden
+01:26:22 GetNamesFor Error getting summoner and/or adding to list: 403, Forbidden
+01:26:22 GetNamesFor Error getting summoner and/or adding to list: 403, Forbidden
+01:26:22 GetChampion Error getting champion name by id: 403, Forbidden
+01:26:22 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+01:26:22 GetChampion Error getting champion name by id: 403, Forbidden
+01:26:22 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+01:26:22 GetChampion Error getting champion name by id: 403, Forbidden
+01:26:22 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+01:26:23 GetChampion Error getting champion name by id: 403, Forbidden
+01:26:23 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+01:26:23 GetChampion Error getting champion name by id: 403, Forbidden
+01:26:23 GetNamesFor Error getting champion and/or adding to list: Object reference not set to an instance of an object.
+01:26:23 View comman Error trying to get existingg team from user: fieldTitles list cannot be empty.
+01:26:23 Gateway     A MessageReceived handler is blocking the gateway task.
+01:26:23 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in D:\Gits\lcsbot\lcsbot\Program.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()

@@ -1,0 +1,12 @@
+01:05:19 Settings    Loaded configuration.json successfully
+01:05:19 SQL Server  Please enter login info
+01:05:27 SetConnecti New connection string set
+01:05:27 Database Te Connection to database is valid
+01:05:27 TODO        make it so functions that use db check if db is enabled in settings
+01:05:27 Discord     Discord.Net v1.0.2 (API v6)
+01:05:28 Gateway     Connecting
+01:05:28 Gateway     Connected
+01:05:29 Gateway     Ready
+01:06:34 Command Han Jovan called !team view
+01:06:34 Command Han Error with command !team view: Invalid context for command; accepted contexts: DM
+01:06:39 Command Han Jovan sent team view
