@@ -1,0 +1,12 @@
+02:07:00 Settings    Loaded configuration.json successfully
+02:07:00 SQL Server  Please enter login info
+02:07:01 SQL Server  Port must be numeric
+02:07:03 SetConnecti New connection string set
+02:07:03 TestDatabas Error testing database: Authentication to host '139.59.162.138' for user 'asdf' using method 'mysql_native_password' failed with message: Access denied for user 'asdf'@'cable-188-2-111-48.dynamic.sbb.rs' (using password: YES)
+02:07:03 TestDatabas Some features which use a mysql database won't be available
+02:07:26 TODO        make it so functions that use db check if db is enabled in settings
+02:07:26 Discord     Discord.Net v1.0.2 (API v6)
+02:07:26 Gateway     Connecting
+02:07:27 Gateway     Connected
+02:07:27 Gateway     Ready
+02:07:30 Command Han Jovan sent asfd

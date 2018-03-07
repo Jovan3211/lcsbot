@@ -74,7 +74,6 @@ namespace lcsbot.Services
             {
                 Console.WriteLine(e.ToString());
                 Debugging.Log("TestDatabase", $"Error testing database: {e.Message}", Discord.LogSeverity.Critical);
-                Debugging.Log("TestDatabase", $"Some features which use a mysql database won't be available", Discord.LogSeverity.Warning);
                 return false;
             }
             

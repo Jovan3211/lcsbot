@@ -1,0 +1,16 @@
+02:03:50 Settings    Loaded configuration.json successfully
+02:03:50 SQL Server  Please enter login info
+02:03:53 SQL Server  Port must be numeric
+02:04:01 SetConnecti New connection string set
+02:04:01 TestDatabas Error testing database: Authentication to host '139.59.162.138' for user 'must' using method 'mysql_native_password' failed with message: Access denied for user 'must'@'cable-188-2-111-48.dynamic.sbb.rs' (using password: YES)
+02:04:01 TestDatabas Some features which use a mysql database won't be available
+02:04:09 SQL Server  Please enter login info
+02:04:16 SetConnecti New connection string set
+02:04:16 Database Te Connection to database is valid
+02:04:16 TODO        make it so functions that use db check if db is enabled in settings
+02:04:17 Discord     Discord.Net v1.0.2 (API v6)
+02:04:17 Gateway     Connecting
+02:04:18 Gateway     Connected
+02:04:18 Gateway     Ready
+02:04:25 Command Han Jovan sent sad
+02:04:25 Command Han Error with command sad: Unknown command
