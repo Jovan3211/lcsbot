@@ -1,0 +1,22 @@
+22:32:10 Settings    Loaded configuration.json successfully
+22:32:10 SQL Server  Please enter login info
+22:32:21 SetConnecti New connection string set
+22:32:21 Database Te Connection to database is valid
+22:32:21 TODO        make it so functions that use db check if db is enabled in settings
+22:32:21 Discord     Discord.Net v1.0.2 (API v6)
+22:32:22 Gateway     Connecting
+22:32:22 Gateway     Connected
+22:32:23 Gateway     Ready
+22:32:27 Command Han tenebi sent team view
+22:32:30 Gateway     A MessageReceived handler is blocking the gateway task.
+22:32:30 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Program.cs:line 105
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()

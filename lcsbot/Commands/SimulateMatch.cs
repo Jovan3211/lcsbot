@@ -45,6 +45,7 @@ namespace lcsbot.Commands
 
                 foreach (var match in recentMatches)
                 {
+                    Console.Write("hi guys its ME");
                     var indepthMatch = api.GetMatch(RiotSharp.Misc.Region.euw, match.GameId);
                     var participant = indepthMatch.Participants.Where(c => c.ParticipantId == id);
                     Int64 kills = participant.First().Stats.Kills;

@@ -1,0 +1,58 @@
+21:32:21 Settings    Loaded configuration.json successfully
+21:32:21 SQL Server  Please enter login info
+21:32:26 SetConnecti New connection string set
+21:32:26 Database Te Connection to database is valid
+21:32:26 TODO        make it so functions that use db check if db is enabled in settings
+21:32:26 Discord     Discord.Net v1.0.2 (API v6)
+21:32:27 Gateway     Connecting
+21:32:28 Gateway     Connected
+21:32:28 Gateway     Ready
+21:32:53 Command Han tomacatx1 called !battle <@140197514958602240>
+21:32:53 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+21:32:55 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:32:55 CheckHttpRe Remote server returned 404, not found
+21:32:55 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:32:55 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:10 Command Han tomacatx1 called !battle <@140197514958602240>
+21:34:33 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+21:34:34 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:34:35 CheckHttpRe Remote server returned 404, not found
+21:34:35 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:35 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:35 Gateway     A MessageReceived handler is blocking the gateway task.
+21:34:36 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+21:34:41 Command Han Jovan called !battle <@254376091089764352>
+21:34:43 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:34:43 CheckHttpRe Remote server returned 404, not found
+21:34:43 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:43 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:44 Command Han tomacatx1 called !battle <@140197514958602240>
+21:34:46 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:34:46 CheckHttpRe Remote server returned 404, not found
+21:34:46 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:46 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:34:46 Rest        Rate limit triggered: channels/416283237321801780/messages
+21:34:46 Rest        Rate limit triggered: channels/416283237321801780/messages
+21:34:46 Rest        Preemptive Rate limit triggered: channels/416283237321801780/messages
+21:34:47 Gateway     A MessageReceived handler is blocking the gateway task.
+21:34:49 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()

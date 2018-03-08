@@ -1,0 +1,45 @@
+22:35:33 Settings    Loaded configuration.json successfully
+22:35:33 SQL Server  Please enter login info
+22:36:09 SetConnecti New connection string set
+22:36:09 Database Te Connection to database is valid
+22:36:09 TODO        make it so functions that use db check if db is enabled in settings
+22:36:10 Discord     Discord.Net v1.0.2 (API v6)
+22:36:10 Gateway     Connecting
+22:36:11 Gateway     Connected
+22:36:11 Gateway     Ready
+22:36:25 Command Han tenebi sent team start
+22:36:45 Command Han tenebi sent team addplayer Strelizia nasus top euw
+22:37:11 Command Han tenebi sent team addplayer Cat Nep katarina mid euw
+22:37:11 Command Han Error with command team addplayer Cat Nep katarina mid euw: The input text has too many parameters
+22:37:20 Command Han tenebi sent team addplayer "Cat Nep" katarina mid euw
+22:37:42 Command Han tenebi sent team addplayer tenebi warwick jungle euw
+22:37:53 Command Han tenebi sent team addplayer blazingwolf101 jinx adc euw
+22:38:01 Command Han tenebi sent team addplayer Haystack leona support euw
+22:38:03 Command Han tenebi sent team view
+22:38:12 Command Han tenebi sent team end
+22:38:14 Command Han tenebi sent team view
+22:38:26 Command Han tenebi sent team start
+22:38:31 Command Han tenebi sent team addplayer Strelizia nasus top euw
+22:38:38 Command Han tenebi sent team addplayer Cat Nep katarina mid euw
+22:38:38 Command Han Error with command team addplayer Cat Nep katarina mid euw: The input text has too many parameters
+22:38:48 Command Han tenebi sent team addplayer "Cat Nep" katarina mid euw
+22:38:52 Command Han tenebi sent team addplayer tenebi warwick jungle euw
+22:38:58 Command Han tenebi sent team addplayer blazingwolf101 jinx adc euw
+22:39:13 Command Han tenebi sent team addplayer blazingwolf101 jinx adc euw
+22:39:21 Command Han tenebi sent team addplayer Haystack leona support euw
+22:39:28 Command Han tenebi sent team save
+22:39:28 SQL Insert  Inserted records into database
+22:39:28 Create summ Created new summoner and added to database, id=53
+22:39:28 SQL Insert  Inserted records into database
+22:39:28 Create summ Created new summoner and added to database, id=54
+22:39:28 SQL Insert  Inserted records into database
+22:39:29 Create summ Created new summoner and added to database, id=55
+22:39:29 SQL Insert  Inserted records into database
+22:39:29 Create summ Created new summoner and added to database, id=56
+22:39:29 SQL Insert  Inserted records into database
+22:39:29 Create summ Created new summoner and added to database, id=56
+22:39:29 SQL Insert  Inserted records into database
+22:39:29 Create team Created team for user: 420326737830871041 with summoners: 53, 54, 55, 56, 57
+22:39:43 Command Han tenebi sent team view
+22:39:47 Command Han tenebi sent team end
+22:39:49 Command Han tenebi sent team view

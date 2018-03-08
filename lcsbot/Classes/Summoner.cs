@@ -18,7 +18,7 @@ namespace lcsbot.Classes
         public string ChampionId { get => championId; }
         public Role Role { get => role; }
         public Lane Lane { get => lane; }
-        private RiotSharp.Misc.Region Region { get => region; }
+        public RiotSharp.Misc.Region Region { get => region; }
 
         public Summoner(string summonerId, string championId, Role role, Lane lane, RiotSharp.Misc.Region region)
         {

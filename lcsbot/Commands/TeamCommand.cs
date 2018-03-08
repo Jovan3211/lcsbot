@@ -68,6 +68,10 @@ namespace lcsbot.Commands
         {
             MessageHandler messageHandler = new MessageHandler();
             EmbedBuilder message;
+            EmbedBuilder embed = new EmbedBuilder()
+                .WithAuthor(a => a.WithIconUrl(Context.User.GetAvatarUrl()).WithName(Context.User.Username + "'s team"))
+                .WithTitle("Here's your lineup!")
+                .WithColor(Palette.Pink);
 
             if (CheckStarted(Context.User.Id.ToString()))
             {
@@ -75,9 +79,9 @@ namespace lcsbot.Commands
                 var user = GetUserByIdFromList(Context.User.Id.ToString());
 
                 if (user.Saved)
-                    savedMessage = "Team is saved.";
+                    savedMessage = "Your team is currently saved! Don't worry!";
                 else
-                    savedMessage = "Team is not saved, use `team save` when done.";
+                    savedMessage = "Team isn't currently saved! Use `team save` when you're done!";
 
                 var summonersInUserTeam = GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString()));
                 var namesForChampionsInUserTeam = GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString()));
@@ -85,7 +89,7 @@ namespace lcsbot.Commands
                 if (summonersInUserTeam.Count > 1)
                     message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, summonersInUserTeam, namesForChampionsInUserTeam);
                 else
-                    message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, new List<string>{ "No one yet" }, new List<string> { "See `help` to see how to add" });
+                    message = messageHandler.BuildEmbed("Your current team setup: ", savedMessage, Palette.Pink, new List<string>{ "It's empty!" }, new List<string> { "See `help` to see how to add" });
             }
             else
             {
@@ -97,22 +101,48 @@ namespace lcsbot.Commands
 
                     Team team = new Team(userid);
                     team.GetExistingTeamFromUser();
+                    
 
                     user.SetTeam(team);
 
-                    var summonersInUserTeam = GetNamesForSummonersInUserTeam(user);
-                    var namesForChampionsInUserTeam = GetNamesForChampionsInUserTeam(user);
+                    int counter = 0;
+                    foreach(var summoner in team.Summoners)
+                    {
+                        counter++;
+                        string role;
+                        string incrementor;
+                        switch (summoner.Lane)
+                        {
+                            case (Lane.Bot): role = "ADC"; break;
+                            case (Lane.Jungle): role = "Jungler"; break;
+                            case (Lane.Mid): role = "Midlaner"; break;
+                            case (Lane.Top): role = "Top"; break;
+                            case (Lane.Support): role = "Support"; break;
+                            default: return;
+                        }                   
+                        switch(counter)
+                        {
+                            case 1: incrementor = "Alright! First up we've got: "; break;
+                            case 2: incrementor = "Secondly, it's: "; break;
+                            case 3: incrementor = "Next up!: "; break;
+                            case 4: incrementor = "Let's not forget about "; break;
+                            case 5: incrementor = "And last, but not least! It's "; break;
+                            default: return;
+                        }
+                        long id = int.Parse(summoner.SummonerId);
+                        embed.AddField(incrementor + RiotApi.GetDevelopmentInstance(Settings.RiotAPIKey).GetSummonerBySummonerId(summoner.Region, id).Name + " as SK" + Context.User.Username.ToUpperInvariant() + "'s " + role + "!", "Looks like they'll be playing... " + GetChampionNameById(summoner.ChampionId).Name + "!");
+                    }
 
-                    message = messageHandler.BuildEmbed("Your current team setup: ", "This is your primary team", Palette.Pink, summonersInUserTeam, namesForChampionsInUserTeam);
+                    
                 }
                 catch (Exception e)
                 {
-                    message = messageHandler.BuildEmbed("Whoops! There's been an error getting your team. Make sure you have one!", $"A message for my makers: {e.Message}", Palette.Pink);
-                    Debugging.Log("View command CHECKSTARTED ELSE", $"Error trying to get existingg team from user: {e.Message}", LogSeverity.Error);
+                    message = messageHandler.BuildEmbed("Whoops! There's been an error getting your team. Make sure you have one!", $"A message for my creators: {e.Message}", Palette.Pink);
+                    Debugging.Log("View command CHECKSTARTED ELSE", $"Error trying to get existing team from user: {e.Message}", LogSeverity.Error);
                 }
             }
 
-            await ReplyAsync("", false, message.Build());
+            await ReplyAsync("", false, embed.Build());
         }
 
         [Command("save")]
@@ -123,7 +153,7 @@ namespace lcsbot.Commands
 
             if (CheckStarted(Context.User.Id.ToString()))
             {
-                string savedMessage = "Team is saved successfully, nothing to worry about I'll keep it safe.";
+                string savedMessage = "Alright! I've taken a note of your team! You can now simulate matches against other users using it!";
                 var user = GetUserByIdFromList(Context.User.Id.ToString());
 
                 if (user.CheckTeamReady())
@@ -134,7 +164,7 @@ namespace lcsbot.Commands
                         user.SaveTeam();
                 }
                 else
-                    savedMessage = "Hmm, looks like your loadout isn't quite ready yet. You need 5 players in your team.";
+                    savedMessage = "Hmm, looks like your loadout isn't quite ready yet. You gotta have five people in your team!";
 
                 message = messageHandler.BuildEmbed("Save team", savedMessage, Palette.Pink, GetNamesForSummonersInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())), GetNamesForChampionsInUserTeam(GetUserByIdFromList(Context.User.Id.ToString())));
             }

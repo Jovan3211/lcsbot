@@ -1,0 +1,24 @@
+21:30:15 Settings    Loaded configuration.json successfully
+21:30:15 SQL Server  Please enter login info
+21:30:41 SetConnecti New connection string set
+21:30:41 Database Te Connection to database is valid
+21:30:41 TODO        make it so functions that use db check if db is enabled in settings
+21:30:41 Discord     Discord.Net v1.0.2 (API v6)
+21:30:42 Gateway     Connecting
+21:30:43 Gateway     Connected
+21:30:43 Gateway     Ready
+21:30:52 Command Han tomacatx1 called !battle someone
+21:30:52 Command Han Error with command !battle someone: User not found
+21:30:57 Command Han tomacatx1 called !battle <@254376091089764352>
+21:30:57 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+21:30:58 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+21:30:58 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:30:58 CheckHttpRe Remote server returned 404, not found
+21:30:58 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:30:58 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:31:08 Command Han tomacatx1 called !battle <@140197514958602240>
+21:31:08 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+21:31:08 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+21:31:08 CheckHttpRe Remote server returned 404, not found
+21:31:08 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+21:31:08 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable

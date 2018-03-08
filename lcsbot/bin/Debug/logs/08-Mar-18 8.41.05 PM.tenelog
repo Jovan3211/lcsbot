@@ -1,0 +1,63 @@
+20:41:07 Settings    Loaded configuration.json successfully
+20:41:07 SQL Server  Please enter login info
+20:42:33 SetConnecti New connection string set
+20:42:34 Database Te Connection to database is valid
+20:42:34 TODO        make it so functions that use db check if db is enabled in settings
+20:42:35 Discord     Discord.Net v1.0.2 (API v6)
+20:42:38 Gateway     Connecting
+20:42:40 Gateway     Connected
+20:42:41 Gateway     Ready
+20:42:54 Command Han tenebi called !battle <@140197514958602240>
+20:42:55 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+20:42:56 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+20:42:56 CheckHttpRe Remote server returned 404, not found
+20:42:56 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+20:42:57 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+20:42:57 Gateway     A MessageReceived handler is blocking the gateway task.
+20:42:58 Gateway     A MessageReceived handler has thrown an unhandled exception.:
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lcsbot.Program.<HandleCommandAsync>d__4.MoveNext() in C:\Users\cPC\Dropbox\LCSBot\LCSBot\lcsbot\Program.cs:line 70
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.EventExtensions.<InvokeAsync>d__1`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Discord.WebSocket.DiscordSocketClient.<TimeoutWrap>d__128.MoveNext()
+20:44:25 Command Han tenebi sent team view
+20:44:25 GetExisting Error getting existing team from user: Index was out of range. Must be non-negative and less than the size of the collection.Parameter name: index
+20:44:26 View comman Error trying to get existingg team from user: fieldTitles list cannot be empty.
+20:44:38 Command Han tenebi sent team start
+20:44:41 Command Han tenebi sent team view
+20:44:50 Command Han tenebi sent team addplayer tenebi ahri mid euw
+20:44:57 Command Han tenebi sent team addplayer tenebi ahri top euw
+20:45:01 Command Han tenebi sent team addplayer tenebi ahri bot eu
+20:45:05 Command Han tenebi sent team addplayer tenebi ahri bot euw
+20:45:09 Command Han tenebi sent team addplayer tenebi ahri adc euw
+20:45:14 Command Han tenebi sent team addplayer tenebi ahri jungle euw
+20:45:19 Command Han tenebi sent team addplayer tenebi ahri support euw
+20:45:21 Command Han tenebi sent team view
+20:45:27 Command Han tenebi sent team save
+20:45:27 SQL Insert  Inserted records into database
+20:45:27 Create summ Created new summoner and added to database, id=26
+20:45:27 SQL Insert  Inserted records into database
+20:45:27 Create summ Created new summoner and added to database, id=49
+20:45:28 SQL Insert  Inserted records into database
+20:45:28 Create summ Created new summoner and added to database, id=50
+20:45:28 SQL Insert  Inserted records into database
+20:45:28 Create summ Created new summoner and added to database, id=51
+20:45:28 SQL Insert  Inserted records into database
+20:45:28 Create summ Created new summoner and added to database, id=52
+20:45:28 SQL Insert  Inserted records into database
+20:45:28 Create team Created team for user: 420326737830871041 with summoners: 48, 49, 50, 51, 52
+20:45:39 Command Han tenebi sent team view
+20:45:41 Command Han tenebi sent team end
+20:45:44 Command Han tenebi sent team start
+20:45:45 Command Han tenebi sent team view
+20:45:47 Command Han tenebi sent team end
+20:46:18 Command Han tenebi called !battle <@140197514958602240>
+20:46:20 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.jpg' is reachable
+20:46:20 CheckHttpRe Remote server returned 404, not found
+20:46:20 CheckHttpRe Checking if 'http://139.59.162.138/lcsbot/joseph.png' is reachable
+20:46:20 CheckHttpRe 'http://139.59.162.138/lcsbot/joseph.png' is reachable

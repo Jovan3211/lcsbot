@@ -1,8 +1,11 @@
-﻿using lcsbot.Riot;
+﻿using Discord.WebSocket;
+using lcsbot.Riot;
+using Discord;
 using lcsbot.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace lcsbot.Classes
 {
@@ -49,8 +52,10 @@ namespace lcsbot.Classes
             catch (Exception e)
             {
                 Debugging.Log("GetExistingTeamFromUser", $"Error getting existing team from user: {e.Message}", Discord.LogSeverity.Error);
+                
                 return false;
             }
+            
         }
 
         public bool AddSummoner(Summoner summoner)
@@ -135,5 +140,7 @@ namespace lcsbot.Classes
                 return false;
             }
         }
+
     }
+
 }
